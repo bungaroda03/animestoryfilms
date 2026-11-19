@@ -1,1 +1,277 @@
-LS0tCmltcG9ydCBMYXlvdXQgZnJvbSAnLi4vLi4vLi4vbGF5b3V0cy9MYXlvdXQuYXN0cm8nOwotLS0KPExheW91dCB0aXRsZT0iRW1iZXIgQmxhZGUg4oCUIEVwaXNvZGUgMjogQXBpIHlhbmcgTWVuZ2luZ2F0IiBkZXNjcmlwdGlvbj0iRW1iZXIgQmxhZGUgRXBpc29kZSAyIChUaGUgRmlyZSBSZW1lbWJlcnMpOiBBcGkgUnl1IG1lbnlhbGEgdW50dWsgcGVydGFtYSBrYWxpbnlhIHNldGVsYWggdGlnYSB0YWh1bi4gVG9udG9uIGN1cGxpa2FubnlhLCBiYWNhIGNlcml0YSBsZW5na2FwbnlhLiI+CiAgPHA+PGEgaHJlZj0iL2ZpbG1zL2VtYmVyLWJsYWRlLyI+4oaQIEVtYmVyIEJsYWRlPC9hPjwvcD4KICA8cD48c3BhbiBjbGFzcz0idGFnIj5FcGlzb2RlIDI8L3NwYW4+PC9wPgogIDxoMT5BcGkgeWFuZyBNZW5naW5nYXQ8L2gxPgogIDxwPjxpbWcgc3JjPSIvaW1hZ2VzL21lZGlhLWdlbmVyYXRpb24tZW1iZXItYmxhZGUtZXAyLXRodW1ibmFpbC1jbGljLTAtYjg1MGY0ODgtNzViZC00ZDFmLTkzNTctODFlZmUwZWU0MDNjLndlYnAiIGFsdD0iRW1iZXIgQmxhZGUgRXBpc29kZSAyIOKAlCBBcGkgeWFuZyBNZW5naW5nYXQiIHN0eWxlPSJ3aWR0aDoxMDAlO2JvcmRlci1yYWRpdXM6MTJweCIgLz48L3A+CiAgPHA+PGVtPkVtYmVyIEJsYWRlIOKAlCBFcGlzb2RlIDIgwrcgNSBtZW5pdCDCtyBTY2VuZSAx4oCTMTggZGFyaSAzMDwvZW0+PC9wPgoKICA8ZGl2IGNsYXNzPSJub3RlIj4KICAgIDxzdHJvbmc+Q3VwbGlrYW4gcHJldmlldy48L3N0cm9uZz4gVmlkZW8gZGkgYmF3YWggaW5pIGFkYWxhaCBjdXBsaWthbgogICAgcHJldmlldyBCYXRjaCAxICsgQmF0Y2ggMiArIEJhdGNoIDMgKHNjZW5lIDHigJMxOCksIGRpLWhvc3QgZGkgYmxvZyBpbmkgc2VuZGlyaS4KICAgIENlcml0YSBsZW5na2FwbnlhIHRlcnR1bGlzIGRpIGJhd2FoLCBkYW4gdGlkYWsgYWthbiBrZWRhbHV3YXJzYS4KICA8L2Rpdj4KCiAgPGgyPlRvbnRvbiBjdXBsaWthbm55YSDigJQgQmF0Y2ggMSwgU2NlbmUgMeKAkzY8L2gyPgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS0xLWZpcmUtaS0wLTAyNTRhNGZiLTNkZDMtNDNiMC1hYjk1LWE3ZmQyN2EzZDI5Ny5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDEg4oCUIEFwaSBtZW55YWxhLjwvc3Ryb25nPiBSeXUgbWVuZ2dlbmdnYW0ga2F0YW5hIOKAlCBhcGkgbWVyYWggYmFuZ3VuIGRpIHNlcGFuamFuZyBiaWxhaCB1bnR1ayBwZXJ0YW1hIGthbGlueWEgc2V0ZWxhaCB0aWdhIHRhaHVuLjwvcD4KICA8L2Rpdj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtMi1rYWl0by0wLTdiYWYzNDI4LWQ4MWMtNDZlZi1hMmUxLWQ2NWMyMDU1ZmQ5OS5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDIg4oCUIEthaXRvIHRlcnNlbnl1bS48L3N0cm9uZz4g4oCcQWtoaXJueWEuIEFwaSBpdHUgbWVuZ2luZ2F0bXUu4oCdPC9wPgogIDwvZGl2PgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS0zLWFpa28taC0wLWU1ZGIyMjJiLTExMTAtNGU3Ny05ZTdiLTIwNzRmMGE2OTRjMC5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDMg4oCUIEFpa28gZGlzYW5kZXJhLjwvc3Ryb25nPiBTZW9yYW5nIHByYWp1cml0IG1lbmFoYW5ueWEgZGkgdGVwaSBhcGkuPC9wPgogIDwvZGl2PgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS00LXJ5dS1maS0wLTU0YjE1NmNmLThkNWYtNDIwZC04NjE5LWNkMDMwMjYxYmY3ZS5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDQg4oCUIFJ5dSBtZW55ZXJhbmcgZGVuZ2FuIGFwaS48L3N0cm9uZz4gQnVzdXIgYXBpIHlhbmcgbWVueWFsYSBtZW1iZWxhaCBiYXJpc2FuIHByYWp1cml0IEthaXRvLjwvcD4KICA8L2Rpdj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtNS1rYWl0by0wLWIxNzcxN2YzLTU3ZWMtNDFiYi1hYzA4LWNjZGY1NDcyY2I0ZC5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDUg4oCUIEthaXRvIG1lbmdodW51cyBwZWRhbmcgZXNueWEuPC9zdHJvbmc+IEthYnV0IGJpcnUgZGluZ2luIG1lbGF3YW4gYXBpIG1lcmFoLjwvcD4KICA8L2Rpdj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtNi1haWtvLWYtMC00MWE0YTdlYi03ZGNlLTQ3NmMtYjUwNi01OGJlYzk1NmEwZmMubXA0Ij48L3ZpZGVvPgogICAgPHA+PHN0cm9uZz5TY2VuZSA2IOKAlCBBaWtvIGJlYmFzLjwvc3Ryb25nPiBJYSBiZXJsYXJpIGtlIHBlbHVrYW4gUnl1IHNlbWVudGFyYSBLYWl0byBtZW5nYXdhc2kuPC9wPgogIDwvZGl2PgoKICA8aDI+VG9udG9uIGN1cGxpa2FubnlhIOKAlCBCYXRjaCAyLCBTY2VuZSA34oCTMTI8L2gyPgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS03LWJ1cm5lZC0wLTgwZmU2ODY2LTBhZDMtNDJiNy05MjE3LWQxYWUzNGUwZTcyNy5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDcg4oCUIEhhcmdhIGFwaS48L3N0cm9uZz4gUnl1IG1lbmF0YXAgdGFuZ2FuIGthbmFubnlhIHlhbmcgdGVyYmFrYXIgc2V0ZWxhaCBtZW1ha2FpIFBlZGFuZyBBcGksIGJla2FzIGx1a2EgbWVyYWggbWFzaWggbWVueWFsYSBzYW1hci48L3A+CiAgPC9kaXY+CgogIDxkaXYgY2xhc3M9InNjZW5lIj4KICAgIDx2aWRlbyBjb250cm9scyBwcmVsb2FkPSJtZXRhZGF0YSIgc3JjPSIvdmlkZW9zL21lZGlhLWdlbmVyYXRpb24tZW1iZXItYmxhZGUtZXAyLXNjZW5lLTgtbWFzdGVyLTAtNzUxZDgxZDMtYTAyYS00MzBiLTllNDItY2ExNzc3MzJlMjUzLm1wNCI+PC92aWRlbz4KICAgIDxwPjxzdHJvbmc+U2NlbmUgOCDigJQgUGVyaW5nYXRhbiBHdXJ1IEhheWF0by48L3N0cm9uZz4gRmxhc2hiYWNrOiBHdXJ1IEhheWF0byBtZW1wZXJpbmdhdGthbiBSeXUgbXVkYSBkaSBoYWxhbWFuIGxhdGloYW4gYmFtYnUg4oCUIGFwaSBoYW55YSBib2xlaCBkaXBha2FpIHNla2FsaSBzZWhhcmksIHNldGlhcCBwZW1ha2FpYW4gbWVtYmFrYXIgc2ViYWdpYW4gaGlkdXBueWEuPC9wPgogIDwvZGl2PgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS05LWFpa28tdC0wLTYwNGE3YjhjLTE5MzQtNGU3Yy1hM2M5LTRiNzAxYWRhMTlkMy5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDkg4oCUIEFpa28gbWVtYmFsdXQgdGFuZ2FuIFJ5dS48L3N0cm9uZz4gRGkga3VpbCB0dWEsIEFpa28gZGVuZ2FuIGxlbWJ1dCBtZW1iYWx1dCB0YW5nYW4gUnl1IHlhbmcgdGVyYmFrYXIgZGVuZ2FuIGthaW4gcHV0aWguPC9wPgogIDwvZGl2PgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS0xMC1zb2xkaS0wLWQxYWNlNGM3LTQ5OTAtNGJlNC1iNTlhLWI4OTVhZmNiNzMxOC5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDEwIOKAlCBQYXN1a2FuIGJlcmt1bXB1bCBsYWdpLjwvc3Ryb25nPiBLYWl0byBkYWxhbSB6aXJhaCBoaXRhbSBtZW1iZXJpIHBlcmludGFoIGRpIHRhbmdnYSBrdWlsLCBwYXN1a2FubnlhIGJlcmt1bXB1bCBkaSBhbHVuLWFsdW4gZGVzYSB5YW5nIHRlcmJha2FyLjwvcD4KICA8L2Rpdj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtMTEtdmlsbGEtMC0zYmMwMmRlNC04OTgzLTQwMGEtOTEwMy0yNTAyYTExZjBmMzYubXA0Ij48L3ZpZGVvPgogICAgPHA+PHN0cm9uZz5TY2VuZSAxMSDigJQgRGVzYSBLYXplIGRpIG1hbGFtIGhhcmkuPC9zdHJvbmc+IEFzYXAgbWVuZ2VwdWwsIHdhcmdhIHNhbGluZyBtZW1iYW50dSBkaSBhbnRhcmEgcnVtYWggeWFuZyB0ZXJiYWthciwgYmFyYSBtZW55YWxhIGRpIGJhd2FoIHNpbmFyIGJ1bGFuLjwvcD4KICA8L2Rpdj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtMTItcnl1LXYtMC05OTFjNDlmOC0yMWY2LTQ0NDktOGRkMy1iZTM4ZGZiYmZhOTQubXA0Ij48L3ZpZGVvPgogICAgPHA+PHN0cm9uZz5TY2VuZSAxMiDigJQgU3VtcGFoIFJ5dS48L3N0cm9uZz4gRGkgYnVraXQgc2FhdCBmYWphciwgUnl1IG1lbmdnZW5nZ2FtIGthdGFuYSB5YW5nIGJlbHVtIG1lbnlhbGEsIHRhbmdhbiB0ZXJiYWx1dCwgYmVydGVrYWQgbWVuZ2VuZGFsaWthbiBhcGkuPC9wPgogIDwvZGl2PgoKICA8aDI+VG9udG9uIGN1cGxpa2FubnlhIOKAlCBCYXRjaCAzLCBTY2VuZSAxM+KAkzE4PC9oMj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtMTMtaWNlLWEtMC02N2RlNGQ2MC0wNmRkLTQ3ZGUtYWFlNS0yMmFmZDUwZDU5ZjkubXA0Ij48L3ZpZGVvPgogICAgPHA+PHN0cm9uZz5TY2VuZSAxMyDigJQgU2VyYW5nYW4gZXMgS2FpdG8uPC9zdHJvbmc+IEthaXRvIG1lbnllcmFuZyBkZW5nYW4gcGVkYW5nIGVzIGJpcnVueWEsIHBlY2FoYW4gZXMgYmV0ZXJiYW5nYW4gZGkgYWx1bi1hbHVuIGRlc2EgeWFuZyB0ZXJiYWthci48L3A+CiAgPC9kaXY+CgogIDxkaXYgY2xhc3M9InNjZW5lIj4KICAgIDx2aWRlbyBjb250cm9scyBwcmVsb2FkPSJtZXRhZGF0YSIgc3JjPSIvdmlkZW9zL21lZGlhLWdlbmVyYXRpb24tZW1iZXItYmxhZGUtZXAyLXNjZW5lLTE0LWZpcmUtMC1kY2RkZWZhZS1iMjJiLTRhMDgtYTZlZS02MjUyNTFiOTU1ZjUubXA0Ij48L3ZpZGVvPgogICAgPHA+PHN0cm9uZz5TY2VuZSAxNCDigJQgVGVtYm9rIGFwaSBSeXUuPC9zdHJvbmc+IFJ5dSBtZW5nYW5na2F0IGthdGFuYSBiZXJhcGkgZGFuIG1lbmNpcHRha2FuIHRlbWJvayBhcGkgbWVyYWggcmFrc2FzYSB1bnR1ayBtZW5haGFuIHNlcmFuZ2FuIGVzIEthaXRvLjwvcD4KICA8L2Rpdj4KCiAgPGRpdiBjbGFzcz0ic2NlbmUiPgogICAgPHZpZGVvIGNvbnRyb2xzIHByZWxvYWQ9Im1ldGFkYXRhIiBzcmM9Ii92aWRlb3MvbWVkaWEtZ2VuZXJhdGlvbi1lbWJlci1ibGFkZS1lcDItc2NlbmUtMTUtZmlyZS0wLTNhMjJjMTAxLWJhNzctNGFkMi1hMjYwLWVkYWJlNmRhZDRhYy5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDE1IOKAlCBBcGkgdnMgZXMuPC9zdHJvbmc+IFBlZGFuZyBhcGkgbWVyYWggUnl1IGJlcnRhYnJha2FuIGRlbmdhbiBwZWRhbmcgZXMgYmlydSBLYWl0byBkaSB1ZGFyYSwgbGVkYWthbiB1YXAgZGFuIGJhcmEgbWVtYmVsYWggbWFsYW0uPC9wPgogIDwvZGl2PgoKICA8ZGl2IGNsYXNzPSJzY2VuZSI+CiAgICA8dmlkZW8gY29udHJvbHMgcHJlbG9hZD0ibWV0YWRhdGEiIHNyYz0iL3ZpZGVvcy9tZWRpYS1nZW5lcmF0aW9uLWVtYmVyLWJsYWRlLWVwMi1zY2VuZS0xNi1yeXUtdy0wLTgwNWIwNWM2LTZiMzctNDRmMi05NmQ1LWEzZDlkYmZiZjBlNS5tcDQiPjwvdmlkZW8+CiAgICA8cD48c3Ryb25nPlNjZW5lIDE2IOKAlCBSeXUgbWVsZW1haC48L3N0cm9uZz4gQXBpIGRpIGthdGFuYSBSeXUgbWVyZWR1cCwgdGFuZ2FubnlhIHlhbmcgdGVyYmFrYXIgZ2VtZXRhciwgc2VoZWxhaSByYW1idXQgaGl0YW1ueWEgbXVsYWkgbWVtdXRpaC48L3A+CiAgPC9kaXY+CgogIDxkaXYgY2xhc3M9InNjZW5lIj4KICAgIDx2aWRlbyBjb250cm9scyBwcmVsb2FkPSJtZXRhZGF0YSIgc3JjPSIvdmlkZW9zL21lZGlhLWdlbmVyYXRpb24tZW1iZXItYmxhZGUtZXAyLXNjZW5lLTE3LWFpa28tMC1iOTU4NzM5ZS05MmI0LTQ3ZWQtYjc5Mi1lNzYwNGE2YTAwZDIubXA0Ij48L3ZpZGVvPgogICAgPHA+PHN0cm9uZz5TY2VuZSAxNyDigJQgQWlrbyBkYWxhbSBiYWhheWEuPC9zdHJvbmc+IFNlb3JhbmcgcHJhanVyaXQgbWVuYW5na2FwIEFpa28gZGkgYWx1bi1hbHVuIGRlc2Egc2VtZW50YXJhIFJ5dSBtZW5ndWx1cmthbiB0YW5nYW4gcGFkYW55YS48L3A+CiAgPC9kaXY+CgogIDxkaXYgY2xhc3M9InNjZW5lIj4KICAgIDx2aWRlbyBjb250cm9scyBwcmVsb2FkPSJtZXRhZGF0YSIgc3JjPSIvdmlkZW9zL21lZGlhLWdlbmVyYXRpb24tZW1iZXItYmxhZGUtZXAyLXNjZW5lLTE4LWthaXRvLTAtMmU1ZjdmZjMtMDVmYS00NmU1LWFkMGQtMjVkN2VhOGIzZDExLm1wNCI+PC92aWRlbz4KICAgIDxwPjxzdHJvbmc+U2NlbmUgMTgg4oCUIFBlcmluZ2F0YW4gS2FpdG8uPC9zdHJvbmc+IEthaXRvIGJlcmJhbGlrIHBlcmdpIGJlcnNhbWEgcGFzdWthbm55YSBrZSBkYWxhbSBhc2FwLCBtZW5vbGVoIGRlbmdhbiBzZW55dW0gZGluZ2luOiDigJxTZWthcmFuZyBUdWFuIEFwaSB0YWh1IGRpIG1hbmEga2F1IGJlcmFkYS7igJ0gUnl1IHJvYm9oIGJlcmx1dHV0IGRpIGJlbGFrYW5nbnlhLjwvcD4KICA8L2Rpdj4KCiAgPGgyPkJhY2EgY2VyaXRhbnlhPC9oMj4KCiAgPGgzPkFwaTwvaDM+CiAgPHA+CiAgICBUYW5nYW4gUnl1IG1lbnV0dXAgZGkgYXRhcyBnYWdhbmcgbWVyYWgsIGRhbiBwZWRhbmcgaXR1IG1lbmdpbmdhdG55YS4KICA8L3A+CiAgPHA+CiAgICBBcGkgaXR1IHRpZGFrIGRhdGFuZyBwZXJsYWhhbi4gQXBpIG1lbmphbGFyIGRpIHNlcGFuamFuZyBiYWphCiAgICBzZXBlcnRpIGFpciB5YW5nIG1lbmVtdWthbiByZXRha2FuIOKAlCBtZXJhaCwgbGFwYXIsIGhpZHVwIOKAlCBkYW4KICAgIG1hbGFtIGRpIGRlc2EgeWFuZyB0ZXJiYWthciBpdHUgYmVydWJhaCBtZW5qYWRpIHNpYW5nIGRpCiAgICBzZWtlbGlsaW5nbnlhLiBUaWdhIHRhaHVuIGlhIG1lbmd1YnVybnlhLiBUaWdhIHRhaHVuIHNhd2FoIGRhbgogICAgcGFnaSB5YW5nIHRlbmFuZy4gRGFsYW0gc2F0dSBuYXBhcywgc2VtdWFueWEgaGlsYW5nLgogIDwvcD4KICA8cD4KICAgIFBhcmEgcHJhanVyaXQgbXVuZHVyLiBCYWhrYW4gcGFzdWthbiBLYWl0bywgeWFuZyBiZXJiYXJpcyBkZW5nYW4KICAgIHNlbXB1cm5hLCB0YWh1IGFwYSB5YW5nIHNlZGFuZyBtZXJla2EgbGloYXQuIEluaSBidWthbiBvYm9yLiBJbmkKICAgIGFkYWxhaCBQZWRhbmcgQXBpLgogIDwvcD4KCiAgPGgzPkthaXRvIHRlcnNlbnl1bTwvaDM+CiAgPHA+CiAgICBLYWl0byB0aWRhayBtdW5kdXIuIElhIGJlcmRpcmkgZGkgYmF3YWggY2FoYXlhIGFwaSwgemlyYWggaGl0YW0KICAgIG1lbmVsYW4gc2luYXJueWEsIGRhbiB0ZXJzZW55dW0gc2VwZXJ0aSBvcmFuZyB5YW5nIHRlcnNlbnl1bSBzYWF0CiAgICBwZW5hbnRpYW4gcGFuamFuZyBha2hpcm55YSBiZXJha2hpci4KICA8L3A+CiAgPHA+CiAgICDigJxBa2hpcm55YSzigJ0ga2F0YW55YS4g4oCcQXBpIGl0dSBtZW5naW5nYXRtdS7igJ0KICA8L3A+CiAgPHA+CiAgICBSeXUgbWVuZ2VydGksIHBhZGEgc2FhdCBpdHUsIGJhaHdhIGluaSBtZW1hbmcgcmVuY2FuYSBLYWl0byBzZWphawogICAgYXdhbC4gS2FpdG8gdGlkYWsgZGF0YW5nIGtlIEthemUgdW50dWsgZW1hcyBhdGF1IHBhZGkuIElhIGRhdGFuZwogICAgdW50dWsgbWVtYnVhdCBSeXUgbWVuZ2FtYmlsIHBlZGFuZyBpdHUuIERlc2EgaXR1IGFkYWxhaCB1bXBhbm55YS4KICAgIEFwaSBpdHUgYWRhbGFoIHRhbmdrYXBhbm55YS4KICA8L3A+CgogIDxoMz5BaWtvPC9oMz4KICA8cD4KICAgIOKAnFJ5dSHigJ0gU3VhcmEgQWlrbyBtZW5lbWJ1cyByYXVuZ2FuIGFwaS4gU2VvcmFuZyBwcmFqdXJpdCBtZW5haGFubnlhCiAgICBkaSB0ZXBpIGFwaSwgdGVtcGF0IHBhbmFzIG1lbWJ1YXQgdWRhcmEgYmVyZ2V0YXIsIHBlZGFuZ255YSBkaQogICAgYmFodSBBaWtvLiBJYSBrZXRha3V0YW4g4oCUIHRldGFwaSBpYSB0aWRhayBtZW1vaG9uLiBJYSBtZW5hdGFwIFJ5dQogICAgc2VwZXJ0aSBpYSBtZW5hdGFwbnlhIGRpIGt1aWw6IGphbmdhbiBsYWt1a2FuIGluaS4gSmFuZ2FuIGJheWFyCiAgICBoYXJnYW55YS4KICA8L3A+CiAgPHA+CiAgICBSeXUgdGV0YXAgbWVsYWt1a2FubnlhLiBJYSBha2FuIHNlbGFsdSBiZWdpdHUuIEl0dWxhaCBoYXJnYW55YSwKICAgIGRhbiBoYXJnYSBpdHUganVnYSBoYXJ1cyBkaWJheWFyIEFpa28sIGthbGF1IGlhIG1lbWJpYXJrYW5ueWEKICAgIHRlcmJha2FyLgogIDwvcD4KCiAgPGgzPkFwaSBtZWxhd2FuIG1hbnVzaWE8L2gzPgogIDxwPgogICAgSWEgYmVyZ2VyYWsgc2VwZXJ0aSBhcGkgaXR1IHNlbmRpcmkuIFNhdHUgYnVzdXIgYXBpLCBkYW4gdG9tYmFrCiAgICBwcmFqdXJpdCBwZXJ0YW1hIG1lbmphZGkgYWJ1LiBTYXR1IGxhZ2ksIGRhbiBvcmFuZy1vcmFuZyB5YW5nCiAgICBtZW5haGFuIEFpa28gYmVybGFyaWFuLCBwZXJpc2FpIG1lcmVrYSBiZXJhc2FwLiBQZWRhbmcgaXR1IHRpZGFrCiAgICB0ZXJhc2EgYmVyYXQuIFJhc2FueWEgc2VwZXJ0aSBwdWxhbmcg4oCUIGRhbiBpdHVsYWggaGFsIHlhbmcgcGFsaW5nCiAgICBtZW5ha3V0a2FuLgogIDwvcD4KICA8cD4KICAgIExhbHUgdGFuZ2FubnlhIG11bGFpIHRlcmJha2FyLiBCdWthbiBwZWRhbmdueWEuIFRhbmdhbm55YS4gQXBpIGl0dQogICAgbWVtYWthbiBrdWxpdCB0ZWxhcGFrIHRhbmdhbm55YSwgdGlwaXMgc2VwZXJ0aSBrZXJ0YXMsIGRhbiBzdWFyYQogICAgR3VydSBIYXlhdG8ga2VtYmFsaSB0ZXJuZ2lhbmcgZGFyaSBoYWxhbWFuIGxhdGloYW4sIGJlcnRhaHVuLXRhaHVuCiAgICBsYWx1OiBzZXRpYXAgcGVtYWthaWFuIG1lbWJha2FyIHNlYmFnaWFuIGRhcmkgb3JhbmcgeWFuZwogICAgbWVtZWdhbmdueWEuCiAgPC9wPgoKICA8aDM+RXM8L2gzPgogIDxwPgogICAgS2FpdG8gYWtoaXJueWEgbWVuZ2h1bnVzIHBlZGFuZ255YS4gQmFqYSBiaXJ1IGVzLCBrYWJ1dCBkaW5naW4KICAgIGJlcmd1bHVuZyBkYXJpIGJpbGFobnlhLCBlbWJ1biBiZWt1IG1la2FyIGRpIGphbGFuIHlhbmcgdGVyYmFrYXIKICAgIGtlIG1hbmEgcHVuIHBlZGFuZyBpdHUgbWVudW5qdWsuIEFwaSBkaSBzYXR1IHNpc2kgYWx1bi1hbHVuLiBFcyBkaQogICAgc2lzaSBsYWlubnlhLiBEZXNhIGl0dSBtZW5haGFuIG5hcGFzIGRpIGFudGFyYSBrZWR1YW55YS4KICA8L3A+CiAgPHA+CiAgICBBaWtvIGxvbG9zIGRhbGFtIGtla2FjYXVhbiBpdHUgZGFuIGJlcmxhcmkg4oCUIGxhbmdzdW5nIGtlIHBlbHVrYW4KICAgIFJ5dSwgd2FqYWhueWEgdGVyYmVuYW0gZGkga2ltb25vIFJ5dSB5YW5nIHJvYmVrLiBJYSBtZW51cnVua2FuCiAgICBwZWRhbmcgeWFuZyBtZW55YWxhIGl0dSwgc2VkaWtpdCBzYWphLCBjdWt1cCB1bnR1ayBtZW1lbHVrbnlhLgogIDwvcD4KICA8cD4KICAgIEthaXRvIG1lbmdhd2FzaSBtZXJla2EsIGRhbiBzZW55dW1ueWEgdGlkYWsgcHVkYXIuIElhIHN1ZGFoCiAgICBtZW5kYXBhdGthbiBhcGEgeWFuZyBpYSBjYXJpLiBBcGkgaXR1IHN1ZGFoIGJhbmd1bi4gRGFuIGFwaSB5YW5nCiAgICBzdWRhaCBiYW5ndW4gYmlzYSBkaWxpaGF0IOKAlCBkYXJpIHRlbXBhdCB5YW5nIHNhbmdhdCwgc2FuZ2F0IGphdWguCiAgPC9wPgogIDxoMz5IYXJnYSBhcGk8L2gzPgogIDxwPgogICAgU2V0ZWxhaCBhcGkgcGFkYW0sIFJ5dSBtZW5hdGFwIHRhbmdhbiBrYW5hbm55YS4gVGVsYXBhayB0YW5nYW5ueWEKICAgIHRlcmJha2FyIOKAlCBiZWthcyBsdWthIG1lcmFoIG1lbWJlbnRhbmcgc2VwZXJ0aSBiYXJhIHlhbmcgYmVsdW0KICAgIHNlcGVudWhueWEgbWF0aSwgYmVyZGVueXV0IHNldGlhcCBrYWxpIGphbnR1bmdueWEgYmVyZGV0YWsuIEluaWxhaAogICAgaGFyZ2EgeWFuZyBzZWxhbHUgZGlwZXJpbmdhdGthbiBHdXJ1IEhheWF0bzogYXBpIGl0dSB0aWRhayBncmF0aXMuCiAgICBTZXRpYXAga2FsaSBwZWRhbmcgaXR1IG1lbnlhbGEsIGlhIG1lbWJha2FyIHNlYmFnaWFuIGRhcmkgb3JhbmcKICAgIHlhbmcgbWVtZWdhbmdueWEuCiAgPC9wPgogIDxwPgogICAgU3VhcmEgc2FuZyBndXJ1IGtlbWJhbGkgdGVybmdpYW5nLCBkYXJpIGhhbGFtYW4gbGF0aWhhbiBiYW1idQogICAgYmVydGFodW4tdGFodW4gbGFsdS4g4oCcU2VrYWxpIHNlaGFyaSwgUnl1LiBUaWRhayBsZWJpaC4gQXBpIGl0dQogICAgbWVuZ2luZ2F0bXUg4oCUIGRhbiBzZXRpYXAga2FsaSBrYXUgbWVtYW5nZ2lsbnlhLCBpYSBtZW5nYW1iaWwKICAgIHNlZGlraXQgZGFyaSBoaWR1cG11LuKAnSBSeXUgbXVkYSBkdWx1IG1lbmdhbmdndWsgdGFucGEgYmVuYXItYmVuYXIKICAgIG1lbmdlcnRpLiBTZWthcmFuZyBpYSBtZW5nZXJ0aS4KICA8L3A+CiAgPHA+CiAgICBBaWtvIG1lbWJhd2FueWEga2Uga3VpbCB0dWEuIERhbGFtIGNhaGF5YSBsaWxpbiwgaWEgbWVtYmFsdXQKICAgIHRhbmdhbiBSeXUgZGVuZ2FuIGthaW4gcHV0aWgsIHBlcmxhaGFuLCBzZW9sYWggdGFuZ2FuIGl0dSBiaXNhCiAgICBwZWNhaCBrYWxhdSBkaXNlbnR1aCB0ZXJsYWx1IGtlcmFzLiDigJxLYXUgdGlkYWsgcGVybHUgbWVsYWt1a2FubnlhCiAgICBsYWdpLOKAnSBiaXNpa255YS4gUnl1IHRpZGFrIG1lbmphd2FiLiBJYSB0YWh1IEthaXRvIGJlbHVtIHNlbGVzYWkuCiAgPC9wPgogIDxwPgogICAgRGkgbHVhciwgcGFzdWthbiBLYWl0byBiZXJrdW1wdWwgbGFnaSBkaSBhbHVuLWFsdW4geWFuZyB0ZXJiYWthci4KICAgIEthaXRvIGJlcmRpcmkgZGkgdGFuZ2dhIGt1aWwsIHppcmFoIGhpdGFtbnlhIGJlcmtpbGF0IGRpIGJhd2FoCiAgICBvYm9yLCBtZW1iZXJpIHBlcmludGFoIGRlbmdhbiBzdWFyYSB0ZW5hbmcuIElhIHRpZGFrIHRlcmJ1cnUtYnVydS4KICAgIEFwaSBzdWRhaCBiYW5ndW4g4oCUIGRhbiBzZWthcmFuZyBpYSBoYW55YSBwZXJsdSBtZW51bmdndS4KICA8L3A+CiAgPHA+CiAgICBNYWxhbSBpdHUsIGRlc2EgS2F6ZSBzdW55aSBkaSBhbnRhcmEgYXNhcCBkYW4gYmFyYS4gV2FyZ2Egc2FsaW5nCiAgICBtZW1iYW50dSBkaSBhbnRhcmEgcnVtYWggeWFuZyB0ZXJiYWthciwgZGFuIGRpIGF0YXMgYnVraXQsIHNhYXQKICAgIGZhamFyIG1lcmVrYWgsIFJ5dSBiZXJkaXJpIG1lbmdnZW5nZ2FtIGthdGFuYSB5YW5nIGJlbHVtIG1lbnlhbGEuCiAgICBUYW5nYW4ga2FuYW5ueWEgdGVyYmFsdXQuIE1hdGFueWEgdGlkYWsgbGFnaSB0YWt1dCDigJQgaWEgYmVyc3VtcGFoCiAgICBkYWxhbSBoYXRpOiBzZWJlbHVtIGFwaSBpdHUgbWVtYW5nZ2lsbnlhIGxhZ2ksIGlhIGhhcnVzIGJlbGFqYXIKICAgIG1lbmdlbmRhbGlrYW5ueWEsIGF0YXUgYXBpIGl0dWxhaCB5YW5nIGFrYW4gbWVuZ2VuZGFsaWthbm55YS4KICA8L3A+CiAgPGgzPkR1ZWwgQXBpIHZzIEVzPC9oMz4KICA8cD4KICAgIEthaXRvIHRpZGFrIG1lbnVuZ2d1IGxhbWEuIFNhYXQgZmFqYXIgYmVsdW0gc2VwZW51aG55YSBtZXJla2FoLAogICAgcGVkYW5nIGVzIGJpcnVueWEgc3VkYWggdGVyaHVudXMg4oCUIGRhbiBwZWNhaGFuIGVzIGJldGVyYmFuZ2FuCiAgICBtZWxpbnRhc2kgYWx1bi1hbHVuIGRlc2EgeWFuZyB0ZXJiYWthciwgZGluZ2luIG1lbnVzdWsgZGkgdGVuZ2FoCiAgICBwYW5hcyBiYXJhLiBLYWl0byBtZW55ZXJhbmcgYnVrYW4gdW50dWsgbWVtYnVudWgsIG1lbGFpbmthbiB1bnR1awogICAgbWVtYW5jaW5nOiBpYSBpbmdpbiBhcGkgaXR1IG1lbnlhbGEgbGFnaSwgbGViaWggYmVzYXIsIGxlYmloCiAgICB0ZXJsaWhhdC4KICA8L3A+CiAgPHA+CiAgICBSeXUgbWVuZ2FuZ2thdCBrYXRhbmEgYmVyYXBpbnlhLCBkYW4gdGVtYm9rIGFwaSBtZXJhaCByYWtzYXNhCiAgICBtZW5qdWxhbmcgZGkgZGVwYW5ueWEsIG1lbmFoYW4gYmFkYWkgZXMgaXR1LiBBcGkgZGFuIGVzIGJlcnRhYnJha2FuCiAgICBkaSB1ZGFyYSDigJQgdWFwIG1lbmdlcHVsLCBiYXJhIGJldGVyYmFuZ2FuLCBkYW4gbWFsYW0gc2Vha2FuCiAgICB0ZXJiZWxhaCBkdWE6IG1lcmFoIGRpIHNhdHUgc2lzaSwgYmlydSBkaSBzaXNpIGxhaW4uIFVudHVrIHNlc2FhdCwKICAgIGtlZHVhbnlhIHNlaW1iYW5nLiBVbnR1ayBzZXNhYXQsIFJ5dSBwZXJjYXlhIGlhIGJpc2EgbWVuYW5nLgogIDwvcD4KICA8cD4KICAgIExhbHUgaGFyZ2EgaXR1IGRhdGFuZyBtZW5hZ2loLiBBcGkgZGkga2F0YW5hIFJ5dSBtZXJlZHVwLCB0YW5nYW4KICAgIGthbmFubnlhIHlhbmcgdGVyYmFrYXIgZ2VtZXRhciB0YWsgdGVya2VuZGFsaSwgZGFuIGtldGlrYSBzZWhlbGFpCiAgICByYW1idXRueWEgamF0dWgga2UgdGFuYWgsIFJ5dSBtZWxpaGF0bnlhOiBoaXRhbW55YSBzdWRhaCBtZW11dGloLgogICAgU2V0aWFwIHBlbWFrYWlhbiBtZW1iYWthciBzZWJhZ2lhbiBoaWR1cG55YSDigJQgZGFuIEd1cnUgSGF5YXRvCiAgICB0aWRhayBwZXJuYWggYmVyYm9ob25nIHNvYWwgaXR1LiBEaSB0ZW5nYWggZHVlbCwgc2VvcmFuZyBwcmFqdXJpdAogICAgbWVuYW5na2FwIEFpa28gbGFnaSwgbWVueWVyZXRueWEga2UgYWx1bi1hbHVuLCBkYW4gUnl1IHlhbmcKICAgIHN1ZGFoIGtlaGFiaXNhbiB0ZW5hZ2EgaGFueWEgYmlzYSBtZW5ndWx1cmthbiB0YW5nYW4gcGFkYW55YS4KICA8L3A+CiAgPHA+CiAgICBLYWl0byBtZW51cnVua2FuIHBlZGFuZ255YS4gSWEgdGlkYWsgcGVybHUgbWVuYW5nIGhhcmkgaW5pIOKAlAogICAgaWEgc3VkYWggbWVuZGFwYXRrYW4geWFuZyBpYSBjYXJpLiBTYW1iaWwgYmVyYmFsaWsgcGVyZ2kgYmVyc2FtYQogICAgcGFzdWthbm55YSBrZSBkYWxhbSBhc2FwLCBpYSBtZW5vbGVoIGRlbmdhbiBzZW55dW0gZGluZ2luLgogICAg4oCcU2VrYXJhbmcgVHVhbiBBcGkgdGFodSBkaSBtYW5hIGthdSBiZXJhZGEs4oCdIGthdGFueWEuIEFwaSBpdHUKICAgIGJ1a2FuIGhhbnlhIHNlbmphdGEuIEFwaSBpdHUgYWRhbGFoIHNpbnlhbCDigJQgZGFuIHNpbnlhbCBpdHUgc3VkYWgKICAgIHRlcmxpaGF0IGRhcmkgdGVtcGF0IHlhbmcgc2FuZ2F0LCBzYW5nYXQgamF1aC4KICA8L3A+CiAgPHA+CiAgICBSeXUgcm9ib2ggYmVybHV0dXQgZGkgYWx1bi1hbHVuIHlhbmcgYmVyYXNhcCwga2F0YW5hIHRlcmxlcGFzIGRhcmkKICAgIHRhbmdhbm55YSwgc2VoZWxhaSByYW1idXQgcHV0aWggamF0dWggZGkgdGFuYWggZGkgZGVwYW5ueWEuIERpCiAgICBrZWphdWhhbiwgZGkgYmFsaWsgcGVndW51bmdhbiwgc2VzdWF0dSB5YW5nIGJlc2FyIGJhcnUgc2FqYQogICAgdGVyYmFuZ3VuLgogIDwvcD4KICA8cD48c3Ryb25nPkJFUlNBTUJVTkcg4oCUIEVwaXNvZGUgMiwgQmF0Y2ggNDwvc3Ryb25nPjwvcD4KCiAgPHA+CiAgICA8YSBjbGFzcz0iYnRuIHNlY29uZGFyeSIgaHJlZj0iL2ZpbG1zL2VtYmVyLWJsYWRlL2VwaXNvZGUtMS8iPuKGkCBFcGlzb2RlIFNlYmVsdW1ueWE8L2E+CiAgICA8YSBjbGFzcz0iYnRuIHNlY29uZGFyeSIgaHJlZj0iL2VwaXNvZGVzLyI+U2VtdWEgRXBpc29kZTwvYT4KICAgIDxhIGNsYXNzPSJidG4gZGlzYWJsZWQiIGhyZWY9IiMiPkJhdGNoIEJlcmlrdXRueWEg4oCUIFNlZ2VyYSBIYWRpcjwvYT4KICA8L3A+CjwvTGF5b3V0Pgo=
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Ember Blade — Episode 2: Api yang Mengingat" description="Ember Blade Episode 2 (The Fire Remembers): Api Ryu menyala untuk pertama kalinya setelah tiga tahun. Tonton cuplikannya, baca cerita lengkapnya.">
+  <p><a href="/films/ember-blade/">← Ember Blade</a></p>
+  <p><span class="tag">Episode 2</span></p>
+  <h1>Api yang Mengingat</h1>
+  <p><img src="/images/media-generation-ember-blade-ep2-thumbnail-clic-0-b850f488-75bd-4d1f-9357-81efe0ee403c.webp" alt="Ember Blade Episode 2 — Api yang Mengingat" style="width:100%;border-radius:12px" /></p>
+  <p><em>Ember Blade — Episode 2 · 5 menit · Scene 1–18 dari 30</em></p>
+
+  <div class="note">
+    <strong>Cuplikan preview.</strong> Video di bawah ini adalah cuplikan
+    preview Batch 1 + Batch 2 + Batch 3 (scene 1–18), di-host di blog ini sendiri.
+    Cerita lengkapnya tertulis di bawah, dan tidak akan kedaluwarsa.
+  </div>
+
+  <h2>Tonton cuplikannya — Batch 1, Scene 1–6</h2>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-1-fire-i-0-0254a4fb-3dd3-43b0-ab95-a7fd27a3d297.mp4"></video>
+    <p><strong>Scene 1 — Api menyala.</strong> Ryu menggenggam katana — api merah bangun di sepanjang bilah untuk pertama kalinya setelah tiga tahun.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-2-kaito-0-7baf3428-d81c-46ef-a2e1-d65c2055fd99.mp4"></video>
+    <p><strong>Scene 2 — Kaito tersenyum.</strong> “Akhirnya. Api itu mengingatmu.”</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-3-aiko-h-0-e5db222b-1110-4e77-9e7b-2074f0a694c0.mp4"></video>
+    <p><strong>Scene 3 — Aiko disandera.</strong> Seorang prajurit menahannya di tepi api.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-4-ryu-fi-0-54b156cf-8d5f-420d-8619-cd030261bf7e.mp4"></video>
+    <p><strong>Scene 4 — Ryu menyerang dengan api.</strong> Busur api yang menyala membelah barisan prajurit Kaito.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-5-kaito-0-b17717f3-57ec-41bb-ac08-ccdf5472cb4d.mp4"></video>
+    <p><strong>Scene 5 — Kaito menghunus pedang esnya.</strong> Kabut biru dingin melawan api merah.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-6-aiko-f-0-41a4a7eb-7dce-476c-b506-58bec956a0fc.mp4"></video>
+    <p><strong>Scene 6 — Aiko bebas.</strong> Ia berlari ke pelukan Ryu sementara Kaito mengawasi.</p>
+  </div>
+
+  <h2>Tonton cuplikannya — Batch 2, Scene 7–12</h2>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-7-burned-0-80fe6866-0ad3-42b7-9217-d1ae34e0e727.mp4"></video>
+    <p><strong>Scene 7 — Harga api.</strong> Ryu menatap tangan kanannya yang terbakar setelah memakai Pedang Api, bekas luka merah masih menyala samar.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-8-master-0-751d81d3-a02a-430b-9e42-ca177732e253.mp4"></video>
+    <p><strong>Scene 8 — Peringatan Guru Hayato.</strong> Flashback: Guru Hayato memperingatkan Ryu muda di halaman latihan bambu — api hanya boleh dipakai sekali sehari, setiap pemakaian membakar sebagian hidupnya.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-9-aiko-t-0-604a7b8c-1934-4e7c-a3c9-4b701ada19d3.mp4"></video>
+    <p><strong>Scene 9 — Aiko membalut tangan Ryu.</strong> Di kuil tua, Aiko dengan lembut membalut tangan Ryu yang terbakar dengan kain putih.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-10-soldi-0-d1ace4c7-4990-4be4-b59a-b895afcb7318.mp4"></video>
+    <p><strong>Scene 10 — Pasukan berkumpul lagi.</strong> Kaito dalam zirah hitam memberi perintah di tangga kuil, pasukannya berkumpul di alun-alun desa yang terbakar.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-11-villa-0-3bc02de4-8983-400a-9103-2502a11f0f36.mp4"></video>
+    <p><strong>Scene 11 — Desa Kaze di malam hari.</strong> Asap mengepul, warga saling membantu di antara rumah yang terbakar, bara menyala di bawah sinar bulan.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-12-ryu-v-0-991c49f8-21f6-4449-8dd3-be38dfbbfa94.mp4"></video>
+    <p><strong>Scene 12 — Sumpah Ryu.</strong> Di bukit saat fajar, Ryu menggenggam katana yang belum menyala, tangan terbalut, bertekad mengendalikan api.</p>
+  </div>
+
+  <h2>Tonton cuplikannya — Batch 3, Scene 13–18</h2>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-13-ice-a-0-67de4d60-06dd-47de-aae5-22afd50d59f9.mp4"></video>
+    <p><strong>Scene 13 — Serangan es Kaito.</strong> Kaito menyerang dengan pedang es birunya, pecahan es beterbangan di alun-alun desa yang terbakar.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-14-fire-0-dcddefae-b22b-4a08-a6ee-625251b955f5.mp4"></video>
+    <p><strong>Scene 14 — Tembok api Ryu.</strong> Ryu mengangkat katana berapi dan menciptakan tembok api merah raksasa untuk menahan serangan es Kaito.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-15-fire-0-3a22c101-ba77-4ad2-a260-edabe6dad4ac.mp4"></video>
+    <p><strong>Scene 15 — Api vs es.</strong> Pedang api merah Ryu bertabrakan dengan pedang es biru Kaito di udara, ledakan uap dan bara membelah malam.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-16-ryu-w-0-805b05c6-6b37-44f2-96d5-a3d9dbfbf0e5.mp4"></video>
+    <p><strong>Scene 16 — Ryu melemah.</strong> Api di katana Ryu meredup, tangannya yang terbakar gemetar, sehelai rambut hitamnya mulai memutih.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-17-aiko-0-b958739e-92b4-47ed-b792-e7604a6a00d2.mp4"></video>
+    <p><strong>Scene 17 — Aiko dalam bahaya.</strong> Seorang prajurit menangkap Aiko di alun-alun desa sementara Ryu mengulurkan tangan padanya.</p>
+  </div>
+
+  <div class="scene">
+    <video controls preload="metadata" src="/videos/media-generation-ember-blade-ep2-scene-18-kaito-0-2e5f7ff3-05fa-46e5-ad0d-25d7ea8b3d11.mp4"></video>
+    <p><strong>Scene 18 — Peringatan Kaito.</strong> Kaito berbalik pergi bersama pasukannya ke dalam asap, menoleh dengan senyum dingin: “Sekarang Tuan Api tahu di mana kau berada.” Ryu roboh berlutut di belakangnya.</p>
+  </div>
+
+  <h2>Baca ceritanya</h2>
+
+  <h3>Api</h3>
+  <p>
+    Tangan Ryu menutup di atas gagang merah, dan pedang itu mengingatnya.
+  </p>
+  <p>
+    Api itu tidak datang perlahan. Api menjalar di sepanjang baja
+    seperti air yang menemukan retakan — merah, lapar, hidup — dan
+    malam di desa yang terbakar itu berubah menjadi siang di
+    sekelilingnya. Tiga tahun ia menguburnya. Tiga tahun sawah dan
+    pagi yang tenang. Dalam satu napas, semuanya hilang.
+  </p>
+  <p>
+    Para prajurit mundur. Bahkan pasukan Kaito, yang berbaris dengan
+    sempurna, tahu apa yang sedang mereka lihat. Ini bukan obor. Ini
+    adalah Pedang Api.
+  </p>
+
+  <h3>Kaito tersenyum</h3>
+  <p>
+    Kaito tidak mundur. Ia berdiri di bawah cahaya api, zirah hitam
+    menelan sinarnya, dan tersenyum seperti orang yang tersenyum saat
+    penantian panjang akhirnya berakhir.
+  </p>
+  <p>
+    “Akhirnya,” katanya. “Api itu mengingatmu.”
+  </p>
+  <p>
+    Ryu mengerti, pada saat itu, bahwa ini memang rencana Kaito sejak
+    awal. Kaito tidak datang ke Kaze untuk emas atau padi. Ia datang
+    untuk membuat Ryu mengambil pedang itu. Desa itu adalah umpannya.
+    Api itu adalah tangkapannya.
+  </p>
+
+  <h3>Aiko</h3>
+  <p>
+    “Ryu!” Suara Aiko menembus raungan api. Seorang prajurit menahannya
+    di tepi api, tempat panas membuat udara bergetar, pedangnya di
+    bahu Aiko. Ia ketakutan — tetapi ia tidak memohon. Ia menatap Ryu
+    seperti ia menatapnya di kuil: jangan lakukan ini. Jangan bayar
+    harganya.
+  </p>
+  <p>
+    Ryu tetap melakukannya. Ia akan selalu begitu. Itulah harganya,
+    dan harga itu juga harus dibayar Aiko, kalau ia membiarkannya
+    terbakar.
+  </p>
+
+  <h3>Api melawan manusia</h3>
+  <p>
+    Ia bergerak seperti api itu sendiri. Satu busur api, dan tombak
+    prajurit pertama menjadi abu. Satu lagi, dan orang-orang yang
+    menahan Aiko berlarian, perisai mereka berasap. Pedang itu tidak
+    terasa berat. Rasanya seperti pulang — dan itulah hal yang paling
+    menakutkan.
+  </p>
+  <p>
+    Lalu tangannya mulai terbakar. Bukan pedangnya. Tangannya. Api itu
+    memakan kulit telapak tangannya, tipis seperti kertas, dan suara
+    Guru Hayato kembali terngiang dari halaman latihan, bertahun-tahun
+    lalu: setiap pemakaian membakar sebagian dari orang yang
+    memegangnya.
+  </p>
+
+  <h3>Es</h3>
+  <p>
+    Kaito akhirnya menghunus pedangnya. Baja biru es, kabut dingin
+    bergulung dari bilahnya, embun beku mekar di jalan yang terbakar
+    ke mana pun pedang itu menunjuk. Api di satu sisi alun-alun. Es di
+    sisi lainnya. Desa itu menahan napas di antara keduanya.
+  </p>
+  <p>
+    Aiko lolos dalam kekacauan itu dan berlari — langsung ke pelukan
+    Ryu, wajahnya terbenam di kimono Ryu yang robek. Ia menurunkan
+    pedang yang menyala itu, sedikit saja, cukup untuk memeluknya.
+  </p>
+  <p>
+    Kaito mengawasi mereka, dan senyumnya tidak pudar. Ia sudah
+    mendapatkan apa yang ia cari. Api itu sudah bangun. Dan api yang
+    sudah bangun bisa dilihat — dari tempat yang sangat, sangat jauh.
+  </p>
+  <h3>Harga api</h3>
+  <p>
+    Setelah api padam, Ryu menatap tangan kanannya. Telapak tangannya
+    terbakar — bekas luka merah membentang seperti bara yang belum
+    sepenuhnya mati, berdenyut setiap kali jantungnya berdetak. Inilah
+    harga yang selalu diperingatkan Guru Hayato: api itu tidak gratis.
+    Setiap kali pedang itu menyala, ia membakar sebagian dari orang
+    yang memegangnya.
+  </p>
+  <p>
+    Suara sang guru kembali terngiang, dari halaman latihan bambu
+    bertahun-tahun lalu. “Sekali sehari, Ryu. Tidak lebih. Api itu
+    mengingatmu — dan setiap kali kau memanggilnya, ia mengambil
+    sedikit dari hidupmu.” Ryu muda dulu mengangguk tanpa benar-benar
+    mengerti. Sekarang ia mengerti.
+  </p>
+  <p>
+    Aiko membawanya ke kuil tua. Dalam cahaya lilin, ia membalut
+    tangan Ryu dengan kain putih, perlahan, seolah tangan itu bisa
+    pecah kalau disentuh terlalu keras. “Kau tidak perlu melakukannya
+    lagi,” bisiknya. Ryu tidak menjawab. Ia tahu Kaito belum selesai.
+  </p>
+  <p>
+    Di luar, pasukan Kaito berkumpul lagi di alun-alun yang terbakar.
+    Kaito berdiri di tangga kuil, zirah hitamnya berkilat di bawah
+    obor, memberi perintah dengan suara tenang. Ia tidak terburu-buru.
+    Api sudah bangun — dan sekarang ia hanya perlu menunggu.
+  </p>
+  <p>
+    Malam itu, desa Kaze sunyi di antara asap dan bara. Warga saling
+    membantu di antara rumah yang terbakar, dan di atas bukit, saat
+    fajar merekah, Ryu berdiri menggenggam katana yang belum menyala.
+    Tangan kanannya terbalut. Matanya tidak lagi takut — ia bersumpah
+    dalam hati: sebelum api itu memanggilnya lagi, ia harus belajar
+    mengendalikannya, atau api itulah yang akan mengendalikannya.
+  </p>
+  <h3>Duel Api vs Es</h3>
+  <p>
+    Kaito tidak menunggu lama. Saat fajar belum sepenuhnya merekah,
+    pedang es birunya sudah terhunus — dan pecahan es beterbangan
+    melintasi alun-alun desa yang terbakar, dingin menusuk di tengah
+    panas bara. Kaito menyerang bukan untuk membunuh, melainkan untuk
+    memancing: ia ingin api itu menyala lagi, lebih besar, lebih
+    terlihat.
+  </p>
+  <p>
+    Ryu mengangkat katana berapinya, dan tembok api merah raksasa
+    menjulang di depannya, menahan badai es itu. Api dan es bertabrakan
+    di udara — uap mengepul, bara beterbangan, dan malam seakan
+    terbelah dua: merah di satu sisi, biru di sisi lain. Untuk sesaat,
+    keduanya seimbang. Untuk sesaat, Ryu percaya ia bisa menang.
+  </p>
+  <p>
+    Lalu harga itu datang menagih. Api di katana Ryu meredup, tangan
+    kanannya yang terbakar gemetar tak terkendali, dan ketika sehelai
+    rambutnya jatuh ke tanah, Ryu melihatnya: hitamnya sudah memutih.
+    Setiap pemakaian membakar sebagian hidupnya — dan Guru Hayato
+    tidak pernah berbohong soal itu. Di tengah duel, seorang prajurit
+    menangkap Aiko lagi, menyeretnya ke alun-alun, dan Ryu yang
+    sudah kehabisan tenaga hanya bisa mengulurkan tangan padanya.
+  </p>
+  <p>
+    Kaito menurunkan pedangnya. Ia tidak perlu menang hari ini —
+    ia sudah mendapatkan yang ia cari. Sambil berbalik pergi bersama
+    pasukannya ke dalam asap, ia menoleh dengan senyum dingin.
+    “Sekarang Tuan Api tahu di mana kau berada,” katanya. Api itu
+    bukan hanya senjata. Api itu adalah sinyal — dan sinyal itu sudah
+    terlihat dari tempat yang sangat, sangat jauh.
+  </p>
+  <p>
+    Ryu roboh berlutut di alun-alun yang berasap, katana terlepas dari
+    tangannya, sehelai rambut putih jatuh di tanah di depannya. Di
+    kejauhan, di balik pegunungan, sesuatu yang besar baru saja
+    terbangun.
+  </p>
+  <p><strong>BERSAMBUNG — Episode 2, Batch 4</strong></p>
+
+  <p>
+    <a class="btn secondary" href="/films/ember-blade/episode-1/">← Episode Sebelumnya</a>
+    <a class="btn secondary" href="/episodes/">Semua Episode</a>
+    <a class="btn disabled" href="#">Batch Berikutnya — Segera Hadir</a>
+  </p>
+</Layout>

@@ -15,105 +15,131 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     <meta name="description" content={description} />
     <title>{title} | Anime Story Films</title>
     <style is:global>
-      :root { color-scheme: light; --bg: #ffffff; --card: #ffffff; --text: #111111; --muted: #666666; --green: #7cb342; --green-dark: #689f38; --accent: #7cb342; --line: #e5e5e5; --purple: #9c5aa8; --purple-dark: #8a4a96; --orange: #ff6b35; }
+      :root { color-scheme: dark; --bg: #0a0a0a; --card: #1a1a1a; --text: #ffffff; --muted: #aaaaaa; --pink: #c2185b; --pink-dark: #a01548; --pink-bright: #ff5c8a; --yellow: #f7c948; --line: #333333; --green: #7cb342; --green-dark: #9ccc65; --purple: #9c5aa8; --orange: #ff6b35; }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
-      a { color: var(--green-dark); }
-      /* ---- Header: Film Independent style, purple ---- */
-      header.site-header { background: var(--purple); color: #fff; padding: 28px 24px 0; }
-      .header-top { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-start; justify-content: space-between; }
-      header.site-header .brand { text-decoration: none; line-height: .95; font-weight: 900; text-transform: uppercase; letter-spacing: .01em; }
-      header.site-header .brand .brand-anime { display: block; font-size: 2.6rem; color: #111; }
-      header.site-header .brand .brand-story { display: block; font-size: 2.6rem; color: #fff; }
-      header.site-header .top-nav { display: flex; flex-wrap: wrap; gap: 4px 22px; align-items: center; padding-top: 10px; }
-      header.site-header .top-nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; text-transform: uppercase; letter-spacing: .05em; }
+      a { color: var(--pink-bright); }
+      /* ---- Header: LK21 style, red/pink bar ---- */
+      header.site-header { background: var(--pink); color: #fff; }
+      .header-top { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; padding: 14px 20px; }
+      header.site-header .brand { text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: .02em; color: #fff; font-size: 1.5rem; line-height: 1; white-space: nowrap; }
+      header.site-header .brand span { color: #ffd54f; }
+      header.site-header .header-search { flex: 1 1 280px; max-width: 480px; display: flex; }
+      header.site-header .header-search input { flex: 1; padding: 9px 12px; border: none; border-radius: 4px 0 0 4px; font-size: .95rem; background: #fff; color: #111; min-width: 0; }
+      header.site-header .header-search button { padding: 9px 14px; border: none; border-radius: 0 4px 4px 0; background: #8e0f3f; color: #fff; font-weight: 700; cursor: pointer; font-size: .95rem; }
+      header.site-header .top-nav { display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: center; }
+      header.site-header .top-nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; text-transform: uppercase; letter-spacing: .03em; }
       header.site-header .top-nav a:hover { text-decoration: underline; }
       header.site-header .top-nav a.active { text-decoration: underline; text-underline-offset: 4px; }
-      header.site-header .search-icon { color: #fff; background: none; border: none; cursor: pointer; padding: 4px; line-height: 1; }
-      header.site-header .search-icon svg { display: block; }
-      header.site-header .sub-nav { max-width: 1100px; margin: 24px auto 0; display: flex; flex-wrap: wrap; gap: 8px 36px; border-top: 1px solid rgba(255,255,255,.35); padding: 16px 0 0; }
-      header.site-header .sub-nav a { color: #fff; text-decoration: none; font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; padding-bottom: 12px; }
-      header.site-header .sub-nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
-      header.site-header .sub-nav a.active { border-bottom: 3px solid #fff; }
-      main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+      /* ---- Yellow genre bar ---- */
+      .genre-bar { background: var(--yellow); }
+      .genre-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 4px 28px; padding: 10px 20px; }
+      .genre-bar a { color: #111; text-decoration: none; font-weight: 800; font-size: .95rem; text-transform: uppercase; letter-spacing: .04em; }
+      .genre-bar a:hover { text-decoration: underline; }
+      .genre-bar a.active { text-decoration: underline; text-underline-offset: 4px; }
+      main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
       h1 { font-size: 2.4rem; line-height: 1.1; margin: .2em 0 .4em; font-weight: 900; text-transform: uppercase; }
-      h2 { margin-top: 2em; border-bottom: 2px solid var(--text); padding-bottom: .3em; font-weight: 900; text-transform: uppercase; }
+      h2 { margin-top: 2em; border-bottom: 2px solid var(--line); padding-bottom: .3em; font-weight: 900; text-transform: uppercase; }
       h3 { font-weight: 800; }
-      .tag { display: inline-block; background: var(--green); color: #fff; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+      .tag { display: inline-block; background: var(--pink); color: #fff; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
       .card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 0 0 20px; margin: 16px 0; overflow: hidden; }
       .card h3 { margin: 16px 20px 0; }
       .card p { margin: 8px 20px 0; }
-      .card .meta { color: var(--green-dark); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 16px 20px 0; }
+      .card .meta { color: var(--pink-bright); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 16px 20px 0; }
       .card .byline { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; margin: 8px 20px 0; }
       .card img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
-      .btn { display: inline-block; background: var(--green); color: #fff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: .9rem; }
+      .btn { display: inline-block; background: var(--pink); color: #fff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: .9rem; }
+      .btn:hover { background: var(--pink-dark); }
       .btn.disabled { opacity: .45; pointer-events: none; }
-      .btn.secondary { background: transparent; border: 2px solid var(--green); color: var(--green-dark); }
+      .btn.secondary { background: transparent; border: 2px solid var(--pink); color: var(--pink-bright); }
+      .btn-pink-wide { display: block; max-width: 480px; margin: 24px auto; text-align: center; background: var(--pink); color: #fff; padding: 14px 20px; border-radius: 4px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+      .btn-pink-wide:hover { background: var(--pink-dark); }
       video { width: 100%; border-radius: 4px; background: #000; }
       .scene { margin: 24px 0; }
       .scene p { color: var(--muted); margin: .5em 0 0; font-size: .95rem; }
-      .note { background: #f4f8ec; border-left: 4px solid var(--green); padding: 12px 16px; font-size: .95rem; }
+      .note { background: #1a1a1a; border-left: 4px solid var(--pink); padding: 12px 16px; font-size: .95rem; }
       .grid { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
       .filter { display: flex; flex-wrap: wrap; gap: 8px 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 8px; }
       .filter a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
-      .filter a.active { color: var(--green-dark); border-bottom: 2px solid var(--green); padding-bottom: 10px; }
+      .filter a.active { color: var(--pink-bright); border-bottom: 2px solid var(--pink); padding-bottom: 10px; }
       .placeholder { height: 200px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.4rem; text-transform: uppercase; text-align: center; padding: 20px; }
       .hero img { width: 100%; height: auto; border-radius: 4px; display: block; }
       .map-wrap iframe { width: 100%; max-width: 600px; height: 450px; border: 0; display: block; }
       .mailing-form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
       .mailing-form input[type="email"] { flex: 1 1 200px; padding: 10px 12px; border: 1px solid #555; border-radius: 4px; background: #111; color: #fff; font-size: .95rem; }
-      .mailing-form button { padding: 10px 18px; border: none; border-radius: 4px; background: var(--purple); color: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; }
-      /* ---- Footer: Film Independent style, black ---- */
-      footer.site-footer { background: #000; color: #fff; padding: 48px 24px 24px; }
-      .footer-inner { max-width: 1100px; margin: 0 auto; }
+      .mailing-form button { padding: 10px 18px; border: none; border-radius: 4px; background: var(--pink); color: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+      /* ---- Poster grid (LK21 catalogue) ---- */
+      .poster-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+      .poster-card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+      .poster-media { position: relative; display: block; }
+      .poster-media img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+      .poster-badge { position: absolute; top: 8px; left: 8px; background: var(--purple); color: #fff; font-size: .75rem; font-weight: 800; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }
+      .poster-badge-hd { position: absolute; top: 8px; right: 8px; background: var(--green); color: #fff; font-size: .75rem; font-weight: 800; padding: 2px 8px; border-radius: 3px; }
+      .poster-body { padding: 12px 14px 16px; }
+      .poster-body h3 { margin: 0; font-size: 1.05rem; }
+      .poster-body h3 a { color: #fff; text-decoration: none; }
+      .poster-body h3 a:hover { color: var(--pink-bright); }
+      .poster-body .poster-meta { color: var(--muted); font-size: .85rem; margin: 6px 0 0; }
+      .poster-body .poster-desc { color: #ddd; font-size: .9rem; margin: 8px 0 0; }
+      .continue-watching { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 20px; margin: 16px 0 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+      .continue-watching img { width: 280px; max-width: 100%; height: auto; border-radius: 4px; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+      .continue-watching h3 { margin: 0 0 6px; }
+      .continue-watching h3 a { color: #fff; text-decoration: none; }
+      .continue-watching p { color: var(--muted); margin: 4px 0; }
+      /* ---- Footer: LK21 style, dark ---- */
+      footer.site-footer { background: #1a1a1a; color: #fff; padding: 48px 24px 24px; border-top: 3px solid var(--pink); }
+      .footer-inner { max-width: 1200px; margin: 0 auto; }
       .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-      footer.site-footer .footer-logo { font-weight: 900; text-transform: uppercase; line-height: .95; font-size: 2rem; text-decoration: none; display: block; margin-bottom: 16px; }
-      footer.site-footer .footer-logo .logo-anime { display: block; color: #fff; }
-      footer.site-footer .footer-logo .logo-story { display: block; color: var(--orange); }
-      footer.site-footer h4 { color: var(--orange); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 12px; }
+      footer.site-footer .footer-logo { font-weight: 900; text-transform: uppercase; line-height: .95; font-size: 1.8rem; text-decoration: none; display: block; margin-bottom: 16px; color: #fff; }
+      footer.site-footer .footer-logo span { color: #ffd54f; }
+      footer.site-footer h4 { color: #fff; font-size: .95rem; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 12px; border-bottom: 2px solid #fff; padding-bottom: 8px; display: inline-block; }
       footer.site-footer p { color: #ddd; font-size: .95rem; margin: 6px 0; }
       footer.site-footer ul { list-style: none; margin: 0; padding: 0; }
       footer.site-footer ul li { margin: 6px 0; }
+      footer.site-footer ul li::before { content: "• "; color: var(--pink-bright); }
       footer.site-footer a { color: #fff; text-decoration: none; }
       footer.site-footer a:hover { text-decoration: underline; }
       footer.site-footer .social-links a { margin-right: 14px; font-weight: 700; }
-      .footer-bottom { max-width: 1100px; margin: 32px auto 0; border-top: 1px solid #333; padding-top: 20px; color: #bbb; font-size: .9rem; }
+      .footer-bottom { max-width: 1200px; margin: 32px auto 0; border-top: 1px solid #333; padding-top: 20px; color: #bbb; font-size: .9rem; text-align: center; }
       .footer-bottom a { color: #fff; }
       @media (max-width: 820px) {
         .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        header.site-header .header-search { order: 3; flex-basis: 100%; max-width: none; }
       }
       @media (max-width: 640px) {
         .grid { grid-template-columns: 1fr; }
         .footer-grid { grid-template-columns: 1fr; }
         h1 { font-size: 1.8rem; }
-        header.site-header .brand .brand-anime, header.site-header .brand .brand-story { font-size: 2rem; }
-        header.site-header .sub-nav { gap: 8px 20px; }
+        header.site-header .brand { font-size: 1.2rem; }
+        .continue-watching img { width: 100%; }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
       <div class="header-top">
-        <a class="brand" href="/">
-          <span class="brand-anime">Anime</span>
-          <span class="brand-story">Story Films</span>
-        </a>
+        <a class="brand" href="/">Anime <span>Story Films</span></a>
+        <form class="header-search" action="/episodes/" method="get" role="search">
+          <input type="search" name="q" placeholder="Cari judul film di Anime Story Films" aria-label="Search films" />
+          <button type="submit" aria-label="Search">Cari</button>
+        </form>
         <nav class="top-nav" aria-label="Main navigation">
-          <a href="/" class={isActive('/')}>Home</a>
-          <a href="/films/ember-blade/" class={isActive('/films/ember-blade/')}>Ember Blade</a>
-          <a href="/episodes/" class={isActive('/episodes/')}>Episodes</a>
-          <a href="/about/" class={isActive('/about/')}>About</a>
-          <a href="/contact/" class={isActive('/contact/')}>Contact</a>
-          <button class="search-icon" type="button" aria-label="Search" title="Search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7" /><line x1="16.5" y1="16.5" x2="21" y2="21" /></svg>
-          </button>
+          <a href="/episodes/" class={isActive('/episodes/')}>Genre</a>
+          <a href="/episodes/" class={isActive('/episodes/')}>Series</a>
+          <a href="/films/ember-blade/episode-2/">Populer</a>
+          <a href="/about/">Negara</a>
+          <a href="/episodes/">Tahun</a>
+          <a href="/contact/">More</a>
         </nav>
       </div>
-      <nav class="sub-nav" aria-label="Sections">
-        <a href="/films/ember-blade/" class={isActive('/films/ember-blade/')}>Ember Blade</a>
-        <a href="/episodes/" class={isActive('/episodes/')}>Episodes</a>
-        <a href="/about/" class={isActive('/about/')}>About</a>
-        <a href="/contact/" class={isActive('/contact/')}>Contact</a>
+      <nav class="genre-bar" aria-label="Genres">
+        <div class="genre-bar-inner">
+          <a href="/films/ember-blade/" class={isActive('/films/ember-blade/')}>Ember Blade</a>
+          <a href="/films/ember-blade/episode-1/" class={isActive('/films/ember-blade/episode-1/')}>Episode 1</a>
+          <a href="/films/ember-blade/episode-2/" class={isActive('/films/ember-blade/episode-2/')}>Episode 2</a>
+          <a href="/about/" class={isActive('/about/')}>About</a>
+          <a href="/contact/" class={isActive('/contact/')}>Contact</a>
+        </div>
       </nav>
     </header>
     <main>
@@ -123,12 +149,9 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
       <div class="footer-inner">
         <div class="footer-grid">
           <div>
-            <a class="footer-logo" href="/">
-              <span class="logo-anime">Anime</span>
-              <span class="logo-story">Story Films</span>
-            </a>
-            <p>Jalan Citra Graha Blok F 9<br />Deli Serdang 20371<br />Sumatera Utara, Indonesia</p>
-            <p><a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a><br /><a href="tel:+6282276113289">+6282276113289</a></p>
+            <a class="footer-logo" href="/">Anime <span>Story Films</span></a>
+            <p>Anime Story Films adalah blog cerita film fiksi original. Setiap film dibuat sebagai cuplikan video sinematik — dan diceritakan lengkap secara tertulis, episode demi episode. Ember Blade adalah karya original kami.</p>
+            <p>Jalan Citra Graha Blok F 9, Deli Serdang 20371, Sumatera Utara, Indonesia<br /><a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a><br /><a href="tel:+6282276113289">+6282276113289</a></p>
             <h4>Follow Us</h4>
             <p class="social-links">
               <a href="https://www.youtube.com/">YouTube</a>
@@ -136,44 +159,41 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
               <a href="https://www.facebook.com/">Facebook</a>
               <a href="https://x.com/">X</a>
             </p>
-          </div>
-          <div>
-            <h4>Explore</h4>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/films/ember-blade/">Ember Blade</a></li>
-              <li><a href="/films/ember-blade/episode-1/">Episode 1</a></li>
-              <li><a href="/episodes/">Episodes</a></li>
-              <li><a href="/about/">About</a></li>
-              <li><a href="/contact/">Contact</a></li>
-              <li><a href="/privacy/">Privacy Policy</a></li>
-              <li><a href="/terms/">Terms of Service</a></li>
-              <li><a href="/disclaimer/">Disclaimer</a></li>
-              <li><a href="/dmca/">DMCA</a></li>
-              <li><a href="/cookies/">Cookie Policy</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>You Can</h4>
-            <ul>
-              <li><a href="/films/ember-blade/episode-1/">Watch Episode 1</a></li>
-              <li><a href="/films/ember-blade/episode-1/">Read the Story</a></li>
-              <li><a href="/contact/">Contact Us</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact Us</h4>
-            <p><a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a><br /><a href="tel:+6282276113289">+6282276113289</a><br />Jalan Citra Graha Blok F 9, Deli Serdang 20371, Sumatera Utara, Indonesia</p>
             <h4>Mailing List Sign-Up</h4>
             <form class="mailing-form" action="mailto:animestory2009@gmail.com" method="post" enctype="text/plain">
               <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" />
               <button type="submit">Subscribe</button>
             </form>
           </div>
+          <div>
+            <h4>Jelajahi</h4>
+            <ul>
+              <li><a href="/">Beranda</a></li>
+              <li><a href="/films/ember-blade/">Ember Blade</a></li>
+              <li><a href="/films/ember-blade/episode-1/">Episode 1</a></li>
+              <li><a href="/films/ember-blade/episode-2/">Episode 2</a></li>
+              <li><a href="/episodes/">Episodes</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Genre Populer</h4>
+            <ul>
+              <li><a href="/episodes/">Action</a></li>
+              <li><a href="/episodes/">Anime</a></li>
+              <li><a href="/episodes/">Drama</a></li>
+              <li><a href="/episodes/">Romance</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Disclaimer</h4>
+            <p>All stories, characters, and places on this site are original fiction, created by Anime Story Films. No copyrighted films or series are hosted here — every video is our own original work. Contact: <a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a></p>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        © 2026 Anime Story Films. All rights reserved.
+        © 2026 Anime Story Films. All Rights Reserved.
         <a href="/privacy/">Privacy Policy</a> ·
         <a href="/terms/">Terms of Service</a> ·
         <a href="/disclaimer/">Disclaimer</a> ·

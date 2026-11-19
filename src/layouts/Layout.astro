@@ -3,12 +3,12 @@ interface Props {
   title: string;
   description?: string;
 }
-const { title, description = 'Fiction film stories — watch the clip, read the real story.' } = Astro.props;
+const { title, description = 'Cerita film fiksi — tonton cuplikannya, baca cerita lengkapnya.' } = Astro.props;
 const path = Astro.url.pathname;
 const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href)) ? 'active' : '';
 ---
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -120,25 +120,25 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
       <div class="header-top">
         <a class="brand" href="/">Anime <span>Story Films</span></a>
         <form class="header-search" action="/episodes/" method="get" role="search">
-          <input type="search" name="q" placeholder="Cari judul film di Anime Story Films" aria-label="Search films" />
-          <button type="submit" aria-label="Search">Cari</button>
+          <input type="search" name="q" placeholder="Cari judul film di Anime Story Films" aria-label="Cari film" />
+          <button type="submit" aria-label="Cari">Cari</button>
         </form>
-        <nav class="top-nav" aria-label="Main navigation">
+        <nav class="top-nav" aria-label="Navigasi utama">
           <a href="/episodes/" class={isActive('/episodes/')}>Genre</a>
-          <a href="/episodes/" class={isActive('/episodes/')}>Series</a>
+          <a href="/episodes/" class={isActive('/episodes/')}>Serial</a>
           <a href="/films/ember-blade/episode-2/">Populer</a>
           <a href="/about/">Negara</a>
           <a href="/episodes/">Tahun</a>
-          <a href="/contact/">More</a>
+          <a href="/contact/">Lainnya</a>
         </nav>
       </div>
-      <nav class="genre-bar" aria-label="Genres">
+      <nav class="genre-bar" aria-label="Genre">
         <div class="genre-bar-inner">
           <a href="/films/ember-blade/" class={isActive('/films/ember-blade/')}>Ember Blade</a>
           <a href="/films/ember-blade/episode-1/" class={isActive('/films/ember-blade/episode-1/')}>Episode 1</a>
           <a href="/films/ember-blade/episode-2/" class={isActive('/films/ember-blade/episode-2/')}>Episode 2</a>
-          <a href="/about/" class={isActive('/about/')}>About</a>
-          <a href="/contact/" class={isActive('/contact/')}>Contact</a>
+          <a href="/about/" class={isActive('/about/')}>Tentang</a>
+          <a href="/contact/" class={isActive('/contact/')}>Kontak</a>
         </div>
       </nav>
     </header>
@@ -152,17 +152,17 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
             <a class="footer-logo" href="/">Anime <span>Story Films</span></a>
             <p>Anime Story Films adalah blog cerita film fiksi original. Setiap film dibuat sebagai cuplikan video sinematik — dan diceritakan lengkap secara tertulis, episode demi episode. Ember Blade adalah karya original kami.</p>
             <p>Jalan Citra Graha Blok F 9, Deli Serdang 20371, Sumatera Utara, Indonesia<br /><a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a><br /><a href="tel:+6282276113289">+6282276113289</a></p>
-            <h4>Follow Us</h4>
+            <h4>Ikuti Kami</h4>
             <p class="social-links">
               <a href="https://www.youtube.com/">YouTube</a>
               <a href="https://www.instagram.com/">Instagram</a>
               <a href="https://www.facebook.com/">Facebook</a>
               <a href="https://x.com/">X</a>
             </p>
-            <h4>Mailing List Sign-Up</h4>
+            <h4>Daftar Milis</h4>
             <form class="mailing-form" action="mailto:animestory2009@gmail.com" method="post" enctype="text/plain">
-              <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" />
-              <button type="submit">Subscribe</button>
+              <input type="email" name="email" placeholder="Alamat email Anda" required aria-label="Alamat email" />
+              <button type="submit">Berlangganan</button>
             </form>
           </div>
           <div>
@@ -172,33 +172,33 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
               <li><a href="/films/ember-blade/">Ember Blade</a></li>
               <li><a href="/films/ember-blade/episode-1/">Episode 1</a></li>
               <li><a href="/films/ember-blade/episode-2/">Episode 2</a></li>
-              <li><a href="/episodes/">Episodes</a></li>
-              <li><a href="/about/">About</a></li>
-              <li><a href="/contact/">Contact</a></li>
+              <li><a href="/episodes/">Episode</a></li>
+              <li><a href="/about/">Tentang</a></li>
+              <li><a href="/contact/">Kontak</a></li>
             </ul>
           </div>
           <div>
             <h4>Genre Populer</h4>
             <ul>
-              <li><a href="/episodes/">Action</a></li>
+              <li><a href="/episodes/">Aksi</a></li>
               <li><a href="/episodes/">Anime</a></li>
               <li><a href="/episodes/">Drama</a></li>
-              <li><a href="/episodes/">Romance</a></li>
+              <li><a href="/episodes/">Romansa</a></li>
             </ul>
           </div>
           <div>
-            <h4>Disclaimer</h4>
-            <p>All stories, characters, and places on this site are original fiction, created by Anime Story Films. No copyrighted films or series are hosted here — every video is our own original work. Contact: <a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a></p>
+            <h4>Penafian</h4>
+            <p>Semua cerita, karakter, dan tempat di situs ini adalah karya fiksi original yang dibuat oleh Anime Story Films. Tidak ada film atau serial berhak cipta yang di-host di sini — setiap video adalah karya original kami sendiri. Kontak: <a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a></p>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        © 2026 Anime Story Films. All Rights Reserved.
-        <a href="/privacy/">Privacy Policy</a> ·
-        <a href="/terms/">Terms of Service</a> ·
-        <a href="/disclaimer/">Disclaimer</a> ·
+        © 2026 Anime Story Films. Hak Cipta Dilindungi Undang-Undang.
+        <a href="/privacy/">Kebijakan Privasi</a> ·
+        <a href="/terms/">Syarat Layanan</a> ·
+        <a href="/disclaimer/">Penafian</a> ·
         <a href="/dmca/">DMCA</a> ·
-        <a href="/cookies/">Cookie Policy</a>
+        <a href="/cookies/">Kebijakan Cookie</a>
       </div>
     </footer>
   </body>

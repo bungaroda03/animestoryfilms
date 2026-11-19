@@ -12,7 +12,7 @@ const { title, description = 'Fiction film stories — watch the clip, read the 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title} | Anime Story Films</title>
-    <style>
+    <style is:global>
       :root { color-scheme: light; --bg: #ffffff; --card: #ffffff; --text: #111111; --muted: #666666; --green: #7cb342; --green-dark: #689f38; --accent: #7cb342; --line: #e5e5e5; }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
@@ -32,7 +32,7 @@ const { title, description = 'Fiction film stories — watch the clip, read the 
       .card p { margin: 8px 20px 0; }
       .card .meta { color: var(--green-dark); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 16px 20px 0; }
       .card .byline { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; margin: 8px 20px 0; }
-      .card img { width: 100%; display: block; }
+      .card img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
       .btn { display: inline-block; background: var(--green); color: #fff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: .9rem; }
       .btn.disabled { opacity: .45; pointer-events: none; }
       .btn.secondary { background: transparent; border: 2px solid var(--green); color: var(--green-dark); }
@@ -46,7 +46,7 @@ const { title, description = 'Fiction film stories — watch the clip, read the 
       .filter a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
       .filter a.active { color: var(--green-dark); border-bottom: 2px solid var(--green); padding-bottom: 10px; }
       .placeholder { height: 200px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.4rem; text-transform: uppercase; text-align: center; padding: 20px; }
-      .hero img { width: 100%; border-radius: 4px; display: block; }
+      .hero img { width: 100%; height: auto; border-radius: 4px; display: block; }
       @media (max-width: 640px) {
         .grid { grid-template-columns: 1fr; }
         h1 { font-size: 1.8rem; }

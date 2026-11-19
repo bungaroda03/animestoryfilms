@@ -2,38 +2,48 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Home" description="Original fiction film stories. Watch the clip, read the real story.">
-  <p><span class="tag">Original fiction</span></p>
-  <p><a href="/films/ember-blade/episode-1/"><img src="/images/ember-blade-thumbnail.webp" alt="Ember Blade Episode 1 — The Village That Burned Twice" style="width:100%;border-radius:12px" /></a></p>
-  <h1>Watch the clip.<br />Read the real story.</h1>
+  <h1>Blog</h1>
+  <p class="filter">
+    <a class="active" href="/">All Films</a>
+    <a href="/films/ember-blade/">Ember Blade</a>
+    <a href="/">Romance</a>
+    <a href="/">Mustang</a>
+  </p>
   <p>
     Every film here is an original story, made as a short cinematic video
     clip — and told in full, in writing, episode by episode. The video is
     the trailer. The writing is the film.
   </p>
-  <p>
-    <a class="btn" href="/films/ember-blade/episode-1/">Start with Episode 1 of Ember Blade</a>
-  </p>
 
   <h2>All Films</h2>
   <div class="grid">
     <div class="card">
-      <h3>Ember Blade</h3>
+      <a href="/films/ember-blade/episode-1/"><img src="/images/ember-blade-thumbnail.webp" alt="Ember Blade Episode 1 — The Village That Burned Twice" /></a>
+      <p class="meta">Ember Blade · Nov 19, 2026</p>
+      <h3>Ember Blade — The Village That Burned Twice</h3>
       <p>Retro 90s anime, feudal Japan. Ryu, 19, the last fire-sword
       swordsman, returns to a village that has burned twice — and the
       man who burned it is waiting.</p>
+      <p class="byline">by Anime Story Films</p>
       <p><a href="/films/ember-blade/">Film page</a> · <a href="/films/ember-blade/episode-1/">Episode 1</a></p>
     </div>
     <div class="card">
+      <div class="placeholder" style="background:#c2185b">I Married a Stranger for $100,000</div>
+      <p class="meta">Romance · Coming Soon</p>
       <h3>I Married a Stranger for $100,000</h3>
       <p>Romance. Maya, a nurse, signs a $100,000 contract marriage with
       Noah, a billionaire — and on day 29 he proposes for real.</p>
+      <p class="byline">by Anime Story Films</p>
       <p><em>Coming soon to the blog.</em></p>
     </div>
     <div class="card">
+      <div class="placeholder" style="background:#b71c1c">Restoring a 1969 Mustang</div>
+      <p class="meta">Restoration · Coming Soon</p>
       <h3>Restoring a 1969 Mustang</h3>
       <p>Cinematic ASMR restoration. A faded candy-apple-red 1969 Mustang,
       abandoned for 30 years, brought back to life — flat tires, broken
       headlight, plate HIST 69 and all.</p>
+      <p class="byline">by Anime Story Films</p>
       <p><em>Coming soon to the blog.</em></p>
     </div>
   </div>
@@ -44,4 +54,7 @@ import Layout from '../layouts/Layout.astro';
     <li><strong>Read</strong> the full story underneath it.</li>
     <li><strong>Continue</strong> — every episode ends on a cliffhanger.</li>
   </ol>
+  <p>
+    <a class="btn" href="/films/ember-blade/episode-1/">Start with Episode 1 of Ember Blade</a>
+  </p>
 </Layout>

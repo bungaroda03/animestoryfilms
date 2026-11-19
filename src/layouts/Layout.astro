@@ -13,35 +13,50 @@ const { title, description = 'Fiction film stories — watch the clip, read the 
     <meta name="description" content={description} />
     <title>{title} | Anime Story Films</title>
     <style>
-      :root { color-scheme: light dark; --bg: #14100c; --card: #211a14; --text: #f5ead9; --muted: #c9b8a3; --accent: #e8542f; --accent2: #f2b134; --line: #3a2f24; }
+      :root { color-scheme: light; --bg: #ffffff; --card: #ffffff; --text: #111111; --muted: #666666; --green: #7cb342; --green-dark: #689f38; --accent: #7cb342; --line: #e5e5e5; }
       * { box-sizing: border-box; }
-      body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--text); line-height: 1.65; }
-      a { color: var(--accent2); }
-      header { border-bottom: 1px solid var(--line); padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; }
-      header .brand { font-size: 1.4rem; font-weight: bold; letter-spacing: .04em; color: var(--text); text-decoration: none; }
-      header .brand span { color: var(--accent); }
-      nav a { color: var(--muted); text-decoration: none; margin-right: 16px; }
-      nav a:hover { color: var(--text); }
-      main { max-width: 860px; margin: 0 auto; padding: 28px 20px 64px; }
-      h1 { font-size: 2.2rem; line-height: 1.15; margin: .2em 0 .4em; }
-      h2 { margin-top: 2em; border-bottom: 1px solid var(--line); padding-bottom: .3em; }
-      .tag { display: inline-block; background: var(--accent); color: #fff; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-family: system-ui, sans-serif; }
-      .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 16px 0; }
-      .card h3 { margin-top: 0; }
-      .btn { display: inline-block; background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-family: system-ui, sans-serif; font-weight: 600; }
+      body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+      a { color: var(--green-dark); }
+      header { background: var(--green); padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
+      header .brand { font-size: 1.5rem; font-weight: 900; letter-spacing: .02em; color: #fff; text-decoration: none; text-transform: uppercase; line-height: 1; }
+      header .brand span { color: #fff; }
+      nav a { color: #fff; text-decoration: none; margin-right: 18px; font-weight: 600; font-size: .95rem; text-transform: uppercase; letter-spacing: .03em; }
+      nav a:hover { text-decoration: underline; }
+      main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+      h1 { font-size: 2.4rem; line-height: 1.1; margin: .2em 0 .4em; font-weight: 900; text-transform: uppercase; }
+      h2 { margin-top: 2em; border-bottom: 2px solid var(--text); padding-bottom: .3em; font-weight: 900; text-transform: uppercase; }
+      h3 { font-weight: 800; }
+      .tag { display: inline-block; background: var(--green); color: #fff; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 0 0 20px; margin: 16px 0; overflow: hidden; }
+      .card h3 { margin: 16px 20px 0; }
+      .card p { margin: 8px 20px 0; }
+      .card .meta { color: var(--green-dark); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 16px 20px 0; }
+      .card .byline { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; margin: 8px 20px 0; }
+      .card img { width: 100%; display: block; }
+      .btn { display: inline-block; background: var(--green); color: #fff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: .9rem; }
       .btn.disabled { opacity: .45; pointer-events: none; }
-      .btn.secondary { background: transparent; border: 1px solid var(--accent2); color: var(--accent2); }
-      video { width: 100%; border-radius: 10px; background: #000; }
-      .scene { margin: 20px 0; }
-      .scene p { color: var(--muted); margin: .5em 0 0; font-family: system-ui, sans-serif; font-size: .95rem; }
-      .note { background: #2a2118; border-left: 4px solid var(--accent2); padding: 12px 16px; font-family: system-ui, sans-serif; font-size: .95rem; }
-      footer { border-top: 1px solid var(--line); padding: 20px; text-align: center; color: var(--muted); font-family: system-ui, sans-serif; font-size: .9rem; }
-      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .btn.secondary { background: transparent; border: 2px solid var(--green); color: var(--green-dark); }
+      video { width: 100%; border-radius: 4px; background: #000; }
+      .scene { margin: 24px 0; }
+      .scene p { color: var(--muted); margin: .5em 0 0; font-size: .95rem; }
+      .note { background: #f4f8ec; border-left: 4px solid var(--green); padding: 12px 16px; font-size: .95rem; }
+      footer { border-top: 1px solid var(--line); padding: 24px 20px; text-align: center; color: var(--muted); font-size: .9rem; }
+      .grid { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
+      .filter { display: flex; flex-wrap: wrap; gap: 8px 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 8px; }
+      .filter a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+      .filter a.active { color: var(--green-dark); border-bottom: 2px solid var(--green); padding-bottom: 10px; }
+      .placeholder { height: 200px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.4rem; text-transform: uppercase; text-align: center; padding: 20px; }
+      .hero img { width: 100%; border-radius: 4px; display: block; }
+      @media (max-width: 640px) {
+        .grid { grid-template-columns: 1fr; }
+        h1 { font-size: 1.8rem; }
+        header { flex-direction: column; align-items: flex-start; }
+      }
     </style>
   </head>
   <body>
     <header>
-      <a class="brand" href="/">Anime <span>Story</span> Films</a>
+      <a class="brand" href="/">Anime Story Films</a>
       <nav>
         <a href="/">Home</a>
         <a href="/films/ember-blade/">Ember Blade</a>

@@ -4,6 +4,8 @@ interface Props {
   description?: string;
 }
 const { title, description = 'Fiction film stories — watch the clip, read the real story.' } = Astro.props;
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href)) ? 'active' : '';
 ---
 <!doctype html>
 <html lang="en">
@@ -13,15 +15,26 @@ const { title, description = 'Fiction film stories — watch the clip, read the 
     <meta name="description" content={description} />
     <title>{title} | Anime Story Films</title>
     <style is:global>
-      :root { color-scheme: light; --bg: #ffffff; --card: #ffffff; --text: #111111; --muted: #666666; --green: #7cb342; --green-dark: #689f38; --accent: #7cb342; --line: #e5e5e5; }
+      :root { color-scheme: light; --bg: #ffffff; --card: #ffffff; --text: #111111; --muted: #666666; --green: #7cb342; --green-dark: #689f38; --accent: #7cb342; --line: #e5e5e5; --purple: #9c5aa8; --purple-dark: #8a4a96; --orange: #ff6b35; }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
       a { color: var(--green-dark); }
-      header { background: var(--green); padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
-      header .brand { font-size: 1.5rem; font-weight: 900; letter-spacing: .02em; color: #fff; text-decoration: none; text-transform: uppercase; line-height: 1; }
-      header .brand span { color: #fff; }
-      nav a { color: #fff; text-decoration: none; margin-right: 18px; font-weight: 600; font-size: .95rem; text-transform: uppercase; letter-spacing: .03em; }
-      nav a:hover { text-decoration: underline; }
+      /* ---- Header: Film Independent style, purple ---- */
+      header.site-header { background: var(--purple); color: #fff; padding: 28px 24px 0; }
+      .header-top { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-start; justify-content: space-between; }
+      header.site-header .brand { text-decoration: none; line-height: .95; font-weight: 900; text-transform: uppercase; letter-spacing: .01em; }
+      header.site-header .brand .brand-anime { display: block; font-size: 2.6rem; color: #111; }
+      header.site-header .brand .brand-story { display: block; font-size: 2.6rem; color: #fff; }
+      header.site-header .top-nav { display: flex; flex-wrap: wrap; gap: 4px 22px; align-items: center; padding-top: 10px; }
+      header.site-header .top-nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; text-transform: uppercase; letter-spacing: .05em; }
+      header.site-header .top-nav a:hover { text-decoration: underline; }
+      header.site-header .top-nav a.active { text-decoration: underline; text-underline-offset: 4px; }
+      header.site-header .search-icon { color: #fff; background: none; border: none; cursor: pointer; padding: 4px; line-height: 1; }
+      header.site-header .search-icon svg { display: block; }
+      header.site-header .sub-nav { max-width: 1100px; margin: 24px auto 0; display: flex; flex-wrap: wrap; gap: 8px 36px; border-top: 1px solid rgba(255,255,255,.35); padding: 16px 0 0; }
+      header.site-header .sub-nav a { color: #fff; text-decoration: none; font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; padding-bottom: 12px; }
+      header.site-header .sub-nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
+      header.site-header .sub-nav a.active { border-bottom: 3px solid #fff; }
       main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
       h1 { font-size: 2.4rem; line-height: 1.1; margin: .2em 0 .4em; font-weight: 900; text-transform: uppercase; }
       h2 { margin-top: 2em; border-bottom: 2px solid var(--text); padding-bottom: .3em; font-weight: 900; text-transform: uppercase; }
@@ -40,34 +53,133 @@ const { title, description = 'Fiction film stories — watch the clip, read the 
       .scene { margin: 24px 0; }
       .scene p { color: var(--muted); margin: .5em 0 0; font-size: .95rem; }
       .note { background: #f4f8ec; border-left: 4px solid var(--green); padding: 12px 16px; font-size: .95rem; }
-      footer { border-top: 1px solid var(--line); padding: 24px 20px; text-align: center; color: var(--muted); font-size: .9rem; }
       .grid { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
       .filter { display: flex; flex-wrap: wrap; gap: 8px 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 8px; }
       .filter a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
       .filter a.active { color: var(--green-dark); border-bottom: 2px solid var(--green); padding-bottom: 10px; }
       .placeholder { height: 200px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.4rem; text-transform: uppercase; text-align: center; padding: 20px; }
       .hero img { width: 100%; height: auto; border-radius: 4px; display: block; }
+      .map-wrap iframe { width: 100%; max-width: 600px; height: 450px; border: 0; display: block; }
+      .mailing-form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+      .mailing-form input[type="email"] { flex: 1 1 200px; padding: 10px 12px; border: 1px solid #555; border-radius: 4px; background: #111; color: #fff; font-size: .95rem; }
+      .mailing-form button { padding: 10px 18px; border: none; border-radius: 4px; background: var(--purple); color: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+      /* ---- Footer: Film Independent style, black ---- */
+      footer.site-footer { background: #000; color: #fff; padding: 48px 24px 24px; }
+      .footer-inner { max-width: 1100px; margin: 0 auto; }
+      .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+      footer.site-footer .footer-logo { font-weight: 900; text-transform: uppercase; line-height: .95; font-size: 2rem; text-decoration: none; display: block; margin-bottom: 16px; }
+      footer.site-footer .footer-logo .logo-anime { display: block; color: #fff; }
+      footer.site-footer .footer-logo .logo-story { display: block; color: var(--orange); }
+      footer.site-footer h4 { color: var(--orange); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 12px; }
+      footer.site-footer p { color: #ddd; font-size: .95rem; margin: 6px 0; }
+      footer.site-footer ul { list-style: none; margin: 0; padding: 0; }
+      footer.site-footer ul li { margin: 6px 0; }
+      footer.site-footer a { color: #fff; text-decoration: none; }
+      footer.site-footer a:hover { text-decoration: underline; }
+      footer.site-footer .social-links a { margin-right: 14px; font-weight: 700; }
+      .footer-bottom { max-width: 1100px; margin: 32px auto 0; border-top: 1px solid #333; padding-top: 20px; color: #bbb; font-size: .9rem; }
+      .footer-bottom a { color: #fff; }
+      @media (max-width: 820px) {
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      }
       @media (max-width: 640px) {
         .grid { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr; }
         h1 { font-size: 1.8rem; }
-        header { flex-direction: column; align-items: flex-start; }
+        header.site-header .brand .brand-anime, header.site-header .brand .brand-story { font-size: 2rem; }
+        header.site-header .sub-nav { gap: 8px 20px; }
       }
     </style>
   </head>
   <body>
-    <header>
-      <a class="brand" href="/">Anime Story Films</a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/films/ember-blade/">Ember Blade</a>
-        <a href="/films/ember-blade/episode-1/">Episode 1</a>
+    <header class="site-header">
+      <div class="header-top">
+        <a class="brand" href="/">
+          <span class="brand-anime">Anime</span>
+          <span class="brand-story">Story Films</span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="/" class={isActive('/')}>Home</a>
+          <a href="/films/ember-blade/" class={isActive('/films/ember-blade/')}>Ember Blade</a>
+          <a href="/episodes/" class={isActive('/episodes/')}>Episodes</a>
+          <a href="/about/" class={isActive('/about/')}>About</a>
+          <a href="/contact/" class={isActive('/contact/')}>Contact</a>
+          <button class="search-icon" type="button" aria-label="Search" title="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7" /><line x1="16.5" y1="16.5" x2="21" y2="21" /></svg>
+          </button>
+        </nav>
+      </div>
+      <nav class="sub-nav" aria-label="Sections">
+        <a href="/films/ember-blade/" class={isActive('/films/ember-blade/')}>Ember Blade</a>
+        <a href="/episodes/" class={isActive('/episodes/')}>Episodes</a>
+        <a href="/about/" class={isActive('/about/')}>About</a>
+        <a href="/contact/" class={isActive('/contact/')}>Contact</a>
       </nav>
     </header>
     <main>
       <slot />
     </main>
-    <footer>
-      Anime Story Films — original fiction film stories. Watch the clip, read the real story.
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <a class="footer-logo" href="/">
+              <span class="logo-anime">Anime</span>
+              <span class="logo-story">Story Films</span>
+            </a>
+            <p>Jalan Citra Graha Blok F 9<br />Deli Serdang 20371<br />Sumatera Utara, Indonesia</p>
+            <p><a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a><br /><a href="tel:+6282276113289">+6282276113289</a></p>
+            <h4>Follow Us</h4>
+            <p class="social-links">
+              <a href="https://www.youtube.com/">YouTube</a>
+              <a href="https://www.instagram.com/">Instagram</a>
+              <a href="https://www.facebook.com/">Facebook</a>
+              <a href="https://x.com/">X</a>
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/films/ember-blade/">Ember Blade</a></li>
+              <li><a href="/films/ember-blade/episode-1/">Episode 1</a></li>
+              <li><a href="/episodes/">Episodes</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/contact/">Contact</a></li>
+              <li><a href="/privacy/">Privacy Policy</a></li>
+              <li><a href="/terms/">Terms of Service</a></li>
+              <li><a href="/disclaimer/">Disclaimer</a></li>
+              <li><a href="/dmca/">DMCA</a></li>
+              <li><a href="/cookies/">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>You Can</h4>
+            <ul>
+              <li><a href="/films/ember-blade/episode-1/">Watch Episode 1</a></li>
+              <li><a href="/films/ember-blade/episode-1/">Read the Story</a></li>
+              <li><a href="/contact/">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact Us</h4>
+            <p><a href="mailto:animestory2009@gmail.com">animestory2009@gmail.com</a><br /><a href="tel:+6282276113289">+6282276113289</a><br />Jalan Citra Graha Blok F 9, Deli Serdang 20371, Sumatera Utara, Indonesia</p>
+            <h4>Mailing List Sign-Up</h4>
+            <form class="mailing-form" action="mailto:animestory2009@gmail.com" method="post" enctype="text/plain">
+              <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Anime Story Films. All rights reserved.
+        <a href="/privacy/">Privacy Policy</a> ·
+        <a href="/terms/">Terms of Service</a> ·
+        <a href="/disclaimer/">Disclaimer</a> ·
+        <a href="/dmca/">DMCA</a> ·
+        <a href="/cookies/">Cookie Policy</a>
+      </div>
     </footer>
   </body>
 </html>

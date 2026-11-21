@@ -102,6 +102,16 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
       footer.site-footer .social-links a { margin-right: 14px; font-weight: 700; }
       .footer-bottom { max-width: 1200px; margin: 32px auto 0; border-top: 1px solid #333; padding-top: 20px; color: #bbb; font-size: .9rem; text-align: center; }
       .footer-bottom a { color: #fff; }
+      /* ---- Cookie consent banner ---- */
+      .cookie-banner { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 100; max-width: 720px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--pink); border-radius: 4px; padding: 16px 20px; box-shadow: 0 8px 24px rgba(0,0,0,.5); display: none; }
+      .cookie-banner.show { display: block; }
+      .cookie-banner p { color: #ddd; font-size: .95rem; margin: 0 0 12px; }
+      .cookie-banner p a { color: var(--pink-bright); }
+      .cookie-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .cookie-actions button { padding: 9px 18px; border: none; border-radius: 4px; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: .85rem; }
+      .cookie-accept { background: var(--pink); color: #fff; }
+      .cookie-accept:hover { background: var(--pink-dark); }
+      .cookie-decline { background: transparent; border: 2px solid var(--pink); color: var(--pink-bright); }
       @media (max-width: 820px) {
         .footer-grid { grid-template-columns: repeat(2, 1fr); }
         header.site-header .header-search { order: 3; flex-basis: 100%; max-width: none; }
@@ -204,5 +214,27 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
         <a href="/cookies/">Kebijakan Cookie</a>
       </div>
     </footer>
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Persetujuan cookie">
+      <p>Kami menggunakan cookie agar situs ini berfungsi, dan — jika iklan ditampilkan — Google AdSense dapat memakai cookie untuk menayangkan iklan yang relevan. Baca <a href="/cookies/">Kebijakan Cookie</a> kami.</p>
+      <div class="cookie-actions">
+        <button type="button" class="cookie-accept" id="cookie-accept">Terima Semua</button>
+        <button type="button" class="cookie-decline" id="cookie-decline">Tolak</button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var key = 'asf-cookie-consent';
+        var banner = document.getElementById('cookie-banner');
+        try {
+          if (!localStorage.getItem(key)) banner.classList.add('show');
+        } catch (e) { banner.classList.add('show'); }
+        function choose(v) {
+          try { localStorage.setItem(key, v); } catch (e) {}
+          banner.classList.remove('show');
+        }
+        document.getElementById('cookie-accept').addEventListener('click', function () { choose('accepted'); });
+        document.getElementById('cookie-decline').addEventListener('click', function () { choose('declined'); });
+      })();
+    </script>
   </body>
 </html>

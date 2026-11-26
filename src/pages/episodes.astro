@@ -8,9 +8,19 @@ import Layout from '../layouts/Layout.astro';
     cerita lengkapnya, dan lanjutkan ke cliffhanger berikutnya.
   </p>
 
+  <div class="filter" id="filter-bar">
+    <a href="/episodes/" data-genre-filter="">Semua</a>
+    <a href="/episodes/?genre=aksi" data-genre-filter="aksi">Aksi</a>
+    <a href="/episodes/?genre=anime" data-genre-filter="anime">Anime</a>
+    <a href="/episodes/?genre=drama" data-genre-filter="drama">Drama</a>
+    <a href="/episodes/?genre=romansa" data-genre-filter="romansa">Romansa</a>
+    <a href="/episodes/?genre=perang" data-genre-filter="perang">Perang</a>
+  </div>
+  <p class="filter-status" id="filter-status"></p>
+
   <h2>Ember Blade</h2>
   <div class="poster-grid">
-    <div class="poster-card">
+    <div class="poster-card" data-genre="aksi anime">
       <a class="poster-media" href="/films/ember-blade/episode-1/">
         <img src="/images/ember-blade-thumbnail.webp" alt="Ember Blade Episode 1 — Desa yang Terbakar Dua Kali" />
         <span class="poster-badge">EPS 30</span>
@@ -23,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/ember-blade/episode-1/">Tonton &amp; Baca Episode 1</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="aksi anime">
       <a class="poster-media" href="/films/ember-blade/episode-2/">
         <img src="/images/media-generation-ember-blade-ep2-thumbnail-clic-0-b850f488-75bd-4d1f-9357-81efe0ee403c.webp" alt="Ember Blade Episode 2 — Api yang Mengingat" />
         <span class="poster-badge">EPS 30</span>
@@ -36,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/ember-blade/episode-2/">Tonton &amp; Baca Episode 2</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="aksi anime">
       <a class="poster-media" href="/films/ember-blade/episode-3/">
         <img src="/images/media-generation-ember-blade-ep3-thumbnail-0-52bea1a1-bda3-47d4-b5ba-1214e4511a90.webp" alt="Ember Blade Episode 3 — Pedang Es dan Tuan Api" />
         <span class="poster-badge">EPS 30</span>
@@ -53,7 +63,7 @@ import Layout from '../layouts/Layout.astro';
 
   <h2>Shadow of the Ronin</h2>
   <div class="poster-grid">
-    <div class="poster-card">
+    <div class="poster-card" data-genre="aksi anime">
       <a class="poster-media" href="/films/shadow-of-the-ronin/episode-1/">
         <img src="/images/media-generation-shadow-ronin-ep1-thumbnail-0-34b863b6-cb20-4ee7-89a1-d09b2ea4ee21.webp" alt="Shadow of the Ronin Episode 1 — Pedang yang Memakan Ingatan" />
         <span class="poster-badge">EPS 30</span>
@@ -66,7 +76,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/shadow-of-the-ronin/episode-1/">Tonton &amp; Baca Episode 1</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="aksi anime">
       <a class="poster-media" href="/films/shadow-of-the-ronin/episode-2/">
         <img src="/images/media-generation-shadow-ronin-ep2-thumbnail-0-9d6a3358-453d-4d28-b141-16ba5de5fb4b.webp" alt="Shadow of the Ronin Episode 2 — Nama yang Terlupakan" />
         <span class="poster-badge">EPS 30</span>
@@ -79,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/shadow-of-the-ronin/episode-2/">Tonton &amp; Baca Episode 2</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="aksi anime">
       <a class="poster-media" href="/films/shadow-of-the-ronin/episode-3/">
         <img src="/images/media-generation-shadow-ronin-ep3-thumbnail-0-7560dcc4-52c1-4f9f-8231-25aee4d32a73.webp" alt="Shadow of the Ronin Episode 3 — Bayangan Terakhir" />
         <span class="poster-badge">EPS 30</span>
@@ -96,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
 
   <h2>The Soldier Who Came Home</h2>
   <div class="poster-grid">
-    <div class="poster-card">
+    <div class="poster-card" data-genre="drama perang">
       <a class="poster-media" href="/films/the-soldier-who-came-home/episode-1/">
         <img src="/images/media-generation-soldier-home-thumbnail-0-966dba4b-d8bc-461f-a433-9ce5c58a1350.webp" alt="The Soldier Who Came Home Episode 1 — Dia Pulang 40 Tahun Kemudian" />
         <span class="poster-badge">EPS 30</span>
@@ -109,7 +119,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/the-soldier-who-came-home/episode-1/">Tonton &amp; Baca Episode 1</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="drama perang">
       <a class="poster-media" href="/films/the-soldier-who-came-home/episode-2/">
         <img src="/images/media-generation-soldier-ep2-thumbnail-ethan-0-eee1401f-ace2-4796-ab7a-c0b0b34d001b.webp" alt="The Soldier Who Came Home Episode 2 — Pilot yang Jatuh dari Langit" />
         <span class="poster-badge">EPS 30</span>
@@ -122,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/the-soldier-who-came-home/episode-2/">Tonton &amp; Baca Episode 2</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="drama perang">
       <a class="poster-media" href="/films/the-soldier-who-came-home/episode-3/">
         <img src="/images/media-generation-soldier-ep3-thumbnail-mike-0-207a407b-d30c-4b47-885c-283a9c33880c.webp" alt="The Soldier Who Came Home Episode 3 — Pelaut yang Pulang dari Laut" />
         <span class="poster-badge">EPS 30</span>
@@ -139,7 +149,7 @@ import Layout from '../layouts/Layout.astro';
 
   <h2>Bintang yang Jatuh ke Seoul</h2>
   <div class="poster-grid">
-    <div class="poster-card">
+    <div class="poster-card" data-genre="drama romansa">
       <a class="poster-media" href="/films/bintang-yang-jatuh-ke-seoul/episode-1/">
         <img src="/images/media-generation-bintang-seoul-ep1-thumbnail-0-a3d2e66a-5380-4607-a156-8b88d79e2a58.webp" alt="Bintang yang Jatuh ke Seoul Episode 1 — Pelarian & Rahasia" />
         <span class="poster-badge">EPS 30</span>
@@ -152,7 +162,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/bintang-yang-jatuh-ke-seoul/episode-1/">Tonton &amp; Baca Episode 1</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="drama romansa">
       <a class="poster-media" href="/films/bintang-yang-jatuh-ke-seoul/episode-2/">
         <img src="/images/media-generation-bintang-seoul-ep2-thumbnail-0-80f011cd-5939-4a8c-b1ea-abcf3db1be7f.webp" alt="Bintang yang Jatuh ke Seoul Episode 2 — Terungkap" />
         <span class="poster-badge">EPS 30</span>
@@ -165,7 +175,7 @@ import Layout from '../layouts/Layout.astro';
         <p><a href="/films/bintang-yang-jatuh-ke-seoul/episode-2/">Tonton &amp; Baca Episode 2</a></p>
       </div>
     </div>
-    <div class="poster-card">
+    <div class="poster-card" data-genre="drama romansa">
       <a class="poster-media" href="/films/bintang-yang-jatuh-ke-seoul/episode-3/">
         <img src="/images/media-generation-bintang-seoul-ep3-thumbnail-0-1b93f612-fb68-45be-816c-2c7c10370770.webp" alt="Bintang yang Jatuh ke Seoul Episode 3 — Panggung atau Cinta" />
         <span class="poster-badge">EPS 30</span>
@@ -179,4 +189,37 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var genre = (params.get('genre') || '').toLowerCase();
+      var q = (params.get('q') || '').toLowerCase().trim();
+      var cards = document.querySelectorAll('.poster-card');
+      var shown = 0;
+      cards.forEach(function (card) {
+        var genres = (card.getAttribute('data-genre') || '').split(' ');
+        var hay = card.textContent.toLowerCase();
+        var ok = (!genre || genres.indexOf(genre) !== -1) && (!q || hay.indexOf(q) !== -1);
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      document.querySelectorAll('.poster-grid').forEach(function (grid) {
+        var h2 = grid.previousElementSibling;
+        var anyVisible = grid.querySelector('.poster-card:not([style*="none"])');
+        grid.style.display = anyVisible ? '' : 'none';
+        if (h2 && h2.tagName === 'H2') h2.style.display = anyVisible ? '' : 'none';
+      });
+      var status = document.getElementById('filter-status');
+      if (status && (genre || q)) {
+        status.textContent = 'Menampilkan ' + shown + ' dari 12 episode' + (genre ? ' · Genre: ' + genre : '') + (q ? ' · Cari: "' + q + '"' : '') + '. ';
+        var clear = document.createElement('a');
+        clear.href = '/episodes/';
+        clear.textContent = 'Hapus filter';
+        status.appendChild(clear);
+      }
+      document.querySelectorAll('#filter-bar a').forEach(function (a) {
+        if ((a.getAttribute('data-genre-filter') || '') === genre) a.classList.add('active');
+      });
+    })();
+  </script>
 </Layout>

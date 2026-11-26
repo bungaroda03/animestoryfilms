@@ -28,3 +28,8 @@ npm run build
 
 Pushing to `main` triggers the GitHub Actions deploy workflow
 (`.github/workflows/deploy.yml`).
+
+## Monetization
+
+Google AdSense: `public/ads.txt` lists the site's authorized seller
+(pub-3939149650030300).
